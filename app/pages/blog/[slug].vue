@@ -8,6 +8,7 @@ const localizedSlugs = {
 const postIndex = site.value.blog.posts.findIndex((item) => item[0] === route.params.slug)
 if (postIndex < 0) throw createError({ statusCode:404, statusMessage:'Article not found' })
 const post = computed(() => site.value.blog.posts[postIndex])
+const images = useSiteImages()
 const setI18nParams = useSetI18nParams()
 setI18nParams({
   cs: { slug: localizedSlugs.cs[postIndex] },
@@ -37,4 +38,4 @@ useCustomPageSeo({
   }),
 })
 </script>
-<template><article><section class="section surface-sand"><div class="container article-shell"><p class="eyebrow">{{ post[2] }}</p><h1 class="page-title">{{ post[1] }}</h1><p class="page-lead">{{ post[3] }}</p><div class="article-hero-image"><ImagePlaceholder :label="`${t('common.placeholder')} · ${post[2]}`" tall/></div></div></section><section class="section"><div class="container article-shell article-content"><h2>{{ articleCopy[0] }}</h2><p>{{ articleCopy[1] }}</p><h2>{{ articleCopy[2] }}</h2><p>{{ articleCopy[3] }}</p><aside class="notice"><strong>i</strong><div><h2>CROBIZ</h2><p>{{ articleCopy[4] }}</p></div></aside><div class="button-row"><NuxtLink class="button button--primary" :to="localePath('/contact')">{{ t('actions.consultation') }}</NuxtLink><NuxtLink class="button button--outline" :to="localePath('/blog')">{{ t('actions.allPosts') }}</NuxtLink></div></div></section></article></template>
+<template><article><section class="section surface-sand"><div class="container article-shell"><p class="eyebrow">{{ post[2] }}</p><h1 class="page-title">{{ post[1] }}</h1><p class="page-lead">{{ post[3] }}</p><div class="article-hero-image"><ImagePlaceholder :label="post[2]" :src="images.blog[postIndex]" tall eager/></div></div></section><section class="section"><div class="container article-shell article-content"><h2>{{ articleCopy[0] }}</h2><p>{{ articleCopy[1] }}</p><h2>{{ articleCopy[2] }}</h2><p>{{ articleCopy[3] }}</p><aside class="notice"><strong>i</strong><div><h2>CROBIZ</h2><p>{{ articleCopy[4] }}</p></div></aside><div class="button-row"><NuxtLink class="button button--primary" :to="localePath('/contact')">{{ t('actions.consultation') }}</NuxtLink><NuxtLink class="button button--outline" :to="localePath('/blog')">{{ t('actions.allPosts') }}</NuxtLink></div></div></section></article></template>

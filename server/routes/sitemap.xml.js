@@ -2,7 +2,7 @@ export default defineEventHandler((event) => {
   setHeader(event, 'content-type', 'application/xml; charset=UTF-8')
   setHeader(event, 'cache-control', 'public, max-age=3600')
   const base = 'https://www.crobiz.cz'
-  const pages = ['', 'about', 'services', 'why-croatia', 'faq', 'blog', 'contact', 'privacy', 'cookies']
+  const pages = ['', 'about', 'services', 'how-we-work', 'why-croatia', 'faq', 'blog', 'contact', 'privacy', 'cookies']
   const posts = [
     { cs: 'koupe-nemovitosti', hr: 'kupnja-nekretnine', en: 'buying-property' },
     { cs: 'zalozeni-firmy', hr: 'osnivanje-tvrtke', en: 'starting-company' },

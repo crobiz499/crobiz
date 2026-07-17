@@ -1,5 +1,5 @@
 {
-  "nav": { "home": "Naslovnica", "about": "O nama", "services": "Usluge", "why": "Zašto Hrvatska", "faq": "FAQ", "blog": "Blog", "contact": "Kontakt" },
+  "nav": { "home": "Naslovnica", "about": "O CROBIZ-u", "services": "Usluge", "how": "Kako surađujemo", "why": "Zašto Hrvatska", "faq": "Česta pitanja", "blog": "Blog", "contact": "Kontakt" },
   "actions": { "consultation": "Dogovorite konzultacije", "discover": "Saznajte više", "services": "Pogledajte usluge", "contact": "Kontaktirajte nas", "read": "Pročitajte članak", "allPosts": "Svi članci", "send": "Pripremi e-mail" },
   "common": { "menu": "Izbornik", "close": "Zatvori", "language": "Jezik", "learnMore": "Više informacija", "placeholder": "Mjesto za fotografiju", "photoCoast": "Hrvatska obala", "photoMeeting": "Poslovni sastanak", "photoProperty": "Nekretnine u Hrvatskoj", "photoPortrait": "Portret Ivane Pisac" },
   "footer": { "tagline": "Pouzdan most između Hrvatske i Češke.", "navigation": "Navigacija", "services": "Usluge", "contact": "Kontakt", "legal": "Pravne informacije", "privacy": "Politika privatnosti", "cookies": "Kolačići", "cookieSettings": "Postavke kolačića", "rights": "Sva prava pridržana.", "location": "Hrvatska · Češka Republika" },

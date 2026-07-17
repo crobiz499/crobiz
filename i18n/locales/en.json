@@ -1,5 +1,5 @@
 {
-  "nav": { "home": "Home", "about": "About", "services": "Services", "why": "Why Croatia", "faq": "FAQ", "blog": "Blog", "contact": "Contact" },
+  "nav": { "home": "Home", "about": "About CROBIZ", "services": "Services", "how": "How we work", "why": "Why Croatia", "faq": "FAQ", "blog": "Blog", "contact": "Contact" },
   "actions": { "consultation": "Book a consultation", "discover": "Discover more", "services": "Explore services", "contact": "Contact us", "read": "Read article", "allPosts": "All articles", "send": "Prepare email" },
   "common": { "menu": "Menu", "close": "Close", "language": "Language", "learnMore": "Learn more", "placeholder": "Photography placeholder", "photoCoast": "Croatian coast", "photoMeeting": "Business meeting", "photoProperty": "Property in Croatia", "photoPortrait": "Portrait of Ivana Pisac" },
   "footer": { "tagline": "A trusted bridge between Croatia and the Czech Republic.", "navigation": "Navigation", "services": "Services", "contact": "Contact", "legal": "Legal", "privacy": "Privacy policy", "cookies": "Cookies", "cookieSettings": "Cookie settings", "rights": "All rights reserved.", "location": "Croatia · Czech Republic" },

@@ -9,8 +9,9 @@ const localeDetails = {
 const seoCopy = {
   cs: {
     home: ['Podnikání, nemovitosti a život v Chorvatsku', 'CROBIZ pomáhá Čechům s podnikáním, koupí nemovitosti, administrativou a životem v Chorvatsku. Česky, osobně a s prověřenými partnery.'],
-    about: ['Český partner v Chorvatsku', 'Poznejte CROBIZ a Ivanu Pisac. Propojujeme Česko s Chorvatskem, komunikujeme česky i chorvatsky a koordinujeme prověřené místní odborníky.'],
+    about: ['O CROBIZ: poradenství v Chorvatsku', 'CROBIZ je specializovaná poradenská společnost pro české občany, podnikatele a investory v Chorvatsku, kterou založila Ivana Pisac.'],
     services: ['Služby v Chorvatsku pro Čechy', 'Pomoc Čechům s podnikáním, nemovitostmi, administrativou, turismem, pojištěním a komunikací v Chorvatsku. Vše koordinuje CROBIZ.'],
+    how: ['Jak spolupracujeme', 'Od úvodní konzultace přes jasný plán a koordinaci až po dlouhodobou podporu. Poznejte způsob spolupráce se společností CROBIZ.'],
     why: ['Proč investovat a žít v Chorvatsku', 'Zjistěte, proč Chorvatsko přitahuje české občany a investory: euro, členství v EU, stabilní trh, silný turismus a vysoká kvalita života.'],
     faq: ['Chorvatsko pro Čechy: časté otázky', 'Odpovědi na časté otázky Čechů o koupi nemovitosti, založení firmy, dokumentech, vyřízení na dálku a životě v Chorvatsku.'],
     blog: ['Chorvatsko: nemovitosti, podnikání a život', 'Praktické články pro Čechy o koupi nemovitosti, podnikání, administrativě, turismu, pojištění a každodenním životě v Chorvatsku.'],
@@ -18,8 +19,9 @@ const seoCopy = {
   },
   hr: {
     home: ['Poslovanje, nekretnine i život u Hrvatskoj', 'CROBIZ pomaže češkim građanima s poslovanjem, kupnjom nekretnina, administracijom i životom u Hrvatskoj uz provjerene lokalne partnere.'],
-    about: ['Partner između Češke i Hrvatske', 'Upoznajte CROBIZ i Ivanu Pisac. Povezujemo Češku i Hrvatsku, komuniciramo na oba jezika i koordiniramo mrežu provjerenih stručnjaka.'],
+    about: ['O CROBIZ-u: podrška u Hrvatskoj', 'CROBIZ je specijalizirana konzultantska tvrtka za češke građane, poduzetnike i investitore u Hrvatskoj, koju je osnovala Ivana Pisac.'],
     services: ['Usluge u Hrvatskoj za češke klijente', 'Podrška češkim građanima pri poslovanju, kupnji nekretnina, administraciji, turizmu, osiguranju i komunikaciji u Hrvatskoj.'],
+    how: ['Kako surađujemo', 'Od uvodnih konzultacija preko jasnog plana i koordinacije do dugoročne podrške. Upoznajte način suradnje s tvrtkom CROBIZ.'],
     why: ['Zašto ulagati i živjeti u Hrvatskoj', 'Saznajte zašto Hrvatska privlači češke građane i ulagače: euro, članstvo u EU, stabilno tržište, razvijen turizam i visoka kvaliteta života.'],
     faq: ['Hrvatska za češke građane: česta pitanja', 'Odgovori o kupnji nekretnine, osnivanju tvrtke, dokumentaciji, postupcima na daljinu i životu čeških građana u Hrvatskoj.'],
     blog: ['Hrvatska: nekretnine, poslovanje i život', 'Praktični članci o kupnji nekretnina, poslovanju, administraciji, turizmu, osiguranju i životu čeških građana u Hrvatskoj.'],
@@ -27,8 +29,9 @@ const seoCopy = {
   },
   en: {
     home: ['Business, property and life in Croatia', 'CROBIZ helps Czech citizens with business, property purchases, administration and life in Croatia through clear guidance and trusted local partners.'],
-    about: ['Your Czech–Croatian partner', 'Meet CROBIZ and Ivana Pisac. We bridge Czechia and Croatia, communicate in both languages and coordinate a trusted professional network.'],
+    about: ['About CROBIZ: consultancy in Croatia', 'CROBIZ is a specialist consultancy founded by Ivana Pisac, supporting Czech citizens, entrepreneurs and investors in Croatia.'],
     services: ['Croatia services for Czech clients', 'Support with business, property, administration, tourism, insurance and communication for Czech citizens planning a move or investment in Croatia.'],
+    how: ['How we work', 'From the initial consultation and a clear plan through coordination and long-term support. Discover how CROBIZ works with its clients.'],
     why: ['Why invest and live in Croatia', 'Explore why Croatia appeals to Czech citizens and investors: the euro, EU membership, a stable market, developed tourism and quality of life.'],
     faq: ['Croatia for Czech citizens: FAQs', 'Answers about buying property, starting a company, documentation, remote procedures and everyday life for Czech citizens in Croatia.'],
     blog: ['Croatia: property, business and living guides', 'Practical guides to property, business, administration, tourism, insurance and everyday life in Croatia for Czech citizens and investors.'],

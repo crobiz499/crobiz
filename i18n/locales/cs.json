@@ -1,5 +1,5 @@
 {
-  "nav": { "home": "Domů", "about": "O nás", "services": "Služby", "why": "Proč Chorvatsko", "faq": "FAQ", "blog": "Blog", "contact": "Kontakt" },
+  "nav": { "home": "Domů", "about": "O CROBIZ", "services": "Služby", "how": "Jak spolupracujeme", "why": "Proč Chorvatsko", "faq": "Časté otázky", "blog": "Blog", "contact": "Kontakt" },
   "actions": { "consultation": "Domluvit konzultaci", "discover": "Zjistit více", "services": "Prohlédnout služby", "contact": "Kontaktujte nás", "read": "Číst článek", "allPosts": "Všechny články", "send": "Připravit e-mail" },
   "common": { "menu": "Menu", "close": "Zavřít", "language": "Jazyk", "learnMore": "Více informací", "placeholder": "Místo pro fotografii", "photoCoast": "Chorvatské pobřeží", "photoMeeting": "Obchodní setkání", "photoProperty": "Nemovitosti v Chorvatsku", "photoPortrait": "Portrét Ivany Pisac" },
   "footer": { "tagline": "Spolehlivý most mezi Českem a Chorvatskem.", "navigation": "Navigace", "services": "Služby", "contact": "Kontakt", "legal": "Právní informace", "privacy": "Ochrana soukromí", "cookies": "Cookies", "cookieSettings": "Nastavení cookies", "rights": "Všechna práva vyhrazena.", "location": "Chorvatsko · Česká republika" },
