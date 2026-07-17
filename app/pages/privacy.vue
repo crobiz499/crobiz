@@ -1,0 +1,40 @@
+<script setup>
+const { locale, t } = useI18n()
+const copy = computed(() => ({
+  cs:{
+    title:'Zásady ochrany osobních údajů',lead:'Transparentní informace o tom, jak CROBIZ zpracovává osobní údaje.',updated:'Aktualizováno: 17. července 2026',
+    controller:['Správce údajů','Správcem je CROBIZ, zastoupený Ivanou Pisac. Dotazy týkající se soukromí zasílejte na info@crobiz.cz. Úplné registrační údaje a sídlo budou doplněny před veřejným spuštěním webu.'],
+    data:['Jaké údaje zpracováváme',['Údaje z dotazu: jméno, e-mail, telefon, vybrané téma a obsah zprávy.','Technické údaje nezbytné pro bezpečné doručení webu, například základní serverové logy.','Údaje o návštěvnosti pouze tehdy, pokud výslovně povolíte analytiku. Do analytiky neposíláme obsah formuláře ani kontaktní údaje.']],
+    purposes:['Účely a právní základy',['Odpověď na dotaz a kroky před uzavřením smlouvy.','Oprávněný zájem na zabezpečení webu, prevenci zneužití a vedení běžné obchodní komunikace.','Plnění právních povinností, pokud vznikne obchodní vztah.','Souhlas pro volitelnou analytiku; souhlas lze kdykoli odvolat v nastavení cookies.']],
+    form:['Kontaktní formulář','Současný formulář připraví zprávu ve vašem e-mailovém programu. Web CROBIZ zprávu neukládá do vlastní databáze. Po odeslání ji zpracovává váš a náš poskytovatel e-mailu.'],
+    sharing:['Příjemci a předávání',['Poskytovatel hostingu a technické podpory v nezbytném rozsahu.','Poskytovatelé e-mailových služeb při komunikaci.','Prověření odborníci pouze tehdy, když je to nutné pro váš požadavek a jste o tom informováni.','Google Analytics pouze po souhlasu. Google může zpracovávat data mimo EHP s použitím příslušných záruk.','Osobní údaje neprodáváme.']],
+    retention:['Doba uchování','Běžné dotazy uchováváme nejdéle 24 měsíců od poslední komunikace, není-li delší doba nutná kvůli smlouvě, právní povinnosti nebo obhajobě nároků. Volbu cookies uchovává váš prohlížeč do změny volby, změny verze zásad nebo vymazání úložiště.'],
+    rights:['Vaše práva',['Přístup k údajům a jejich kopii.','Oprava nepřesných údajů.','Výmaz nebo omezení zpracování, pokud jsou splněny podmínky.','Námitka proti zpracování založenému na oprávněném zájmu.','Odvolání souhlasu bez vlivu na předchozí zákonnost zpracování.','Stížnost u Úřadu pro ochranu osobních údajů (uoou.gov.cz) nebo jiného příslušného dozorového úřadu.']],
+  },
+  hr:{
+    title:'Politika privatnosti',lead:'Transparentne informacije o tome kako CROBIZ obrađuje osobne podatke.',updated:'Ažurirano: 17. srpnja 2026.',
+    controller:['Voditelj obrade','Voditelj obrade je CROBIZ, koji zastupa Ivana Pisac. Upite o privatnosti pošaljite na info@crobiz.cz. Potpuni registracijski podaci i adresa bit će dodani prije javnog pokretanja stranice.'],
+    data:['Podaci koje obrađujemo',['Podaci iz upita: ime, e-mail, telefon, odabrana tema i sadržaj poruke.','Tehnički podaci nužni za sigurnu isporuku stranice, poput osnovnih poslužiteljskih zapisa.','Podaci o posjećenosti samo ako izričito dopustite analitiku. Sadržaj obrasca i kontaktne podatke ne šaljemo u analitiku.']],
+    purposes:['Svrhe i pravne osnove',['Odgovor na upit i radnje prije sklapanja ugovora.','Legitimni interes za sigurnost stranice, sprječavanje zlouporabe i uobičajenu poslovnu komunikaciju.','Ispunjavanje zakonskih obveza ako nastane poslovni odnos.','Privola za neobaveznu analitiku; možete je povući u postavkama kolačića.']],
+    form:['Kontaktni obrazac','Trenutačni obrazac priprema poruku u vašem programu za e-poštu. CROBIZ web ne sprema poruku u vlastitu bazu podataka. Nakon slanja obrađuju je vaš i naš pružatelj e-pošte.'],
+    sharing:['Primatelji i prijenosi',['Pružatelj hostinga i tehničke podrške u nužnom opsegu.','Pružatelji e-pošte tijekom komunikacije.','Provjereni stručnjaci samo kada je to potrebno za vaš zahtjev i kada ste o tome obaviješteni.','Google Analytics samo nakon privole. Google može obrađivati podatke izvan EGP-a uz odgovarajuće zaštitne mjere.','Ne prodajemo osobne podatke.']],
+    retention:['Rok čuvanja','Uobičajene upite čuvamo najdulje 24 mjeseca od zadnje komunikacije, osim ako je dulje čuvanje potrebno zbog ugovora, zakonske obveze ili obrane zahtjeva. Odabir kolačića ostaje u pregledniku do promjene odabira, verzije politike ili brisanja pohrane.'],
+    rights:['Vaša prava',['Pristup podacima i njihova kopija.','Ispravak netočnih podataka.','Brisanje ili ograničenje obrade kada su ispunjeni uvjeti.','Prigovor na obradu temeljenu na legitimnom interesu.','Povlačenje privole bez utjecaja na raniju zakonitost obrade.','Pritužba nadležnom tijelu, uključujući AZOP (azop.hr) ili češki ÚOOÚ (uoou.gov.cz), ovisno o nadležnosti.']],
+  },
+  en:{
+    title:'Privacy policy',lead:'Transparent information about how CROBIZ processes personal data.',updated:'Updated: 17 July 2026',
+    controller:['Data controller','The controller is CROBIZ, represented by Ivana Pisac. Send privacy enquiries to info@crobiz.cz. Complete registration details and the registered address will be added before the public launch.'],
+    data:['Data we process',['Enquiry information: name, email, phone, selected topic and message content.','Technical information necessary to deliver the website securely, such as basic server logs.','Usage information only when you explicitly allow analytics. Form contents and contact details are never sent to analytics.']],
+    purposes:['Purposes and legal bases',['Responding to enquiries and taking steps before entering a contract.','Legitimate interests in website security, abuse prevention and ordinary business correspondence.','Compliance with legal duties if a business relationship is established.','Consent for optional analytics, which can be withdrawn through Cookie settings.']],
+    form:['Contact form','The current form prepares a message in your email application. The CROBIZ website does not store it in its own database. Once sent, it is processed by your and our email providers.'],
+    sharing:['Recipients and transfers',['Hosting and technical-support providers where necessary.','Email providers during correspondence.','Trusted professionals only when necessary for your request and after you are informed.','Google Analytics only after consent. Google may process information outside the EEA using appropriate safeguards.','We do not sell personal data.']],
+    retention:['Retention','Ordinary enquiries are retained for no longer than 24 months after the latest communication unless a contract, legal duty or defence of claims requires longer storage. Your cookie choice remains in the browser until changed, the policy version changes or storage is cleared.'],
+    rights:['Your rights',['Access to your data and a copy.','Correction of inaccurate data.','Erasure or restriction where the legal conditions apply.','Objection to processing based on legitimate interests.','Withdrawal of consent without affecting earlier lawful processing.','Complaint to the competent supervisory authority, including the Czech ÚOOÚ (uoou.gov.cz) or Croatian AZOP (azop.hr), as applicable.']],
+  },
+})[locale.value])
+useCustomPageSeo({ section:'privacy', title:() => copy.value.title, description:() => copy.value.lead })
+</script>
+
+<template>
+  <div><section class="section surface-sand"><div class="container legal-content"><p class="eyebrow">{{ t('footer.legal') }}</p><h1 class="page-title">{{ copy.title }}</h1><p class="page-lead">{{ copy.lead }}</p><p class="legal-updated">{{ copy.updated }}</p></div></section><section class="section"><div class="container legal-content"><h2>{{ copy.controller[0] }}</h2><p>{{ copy.controller[1] }}</p><template v-for="key in ['data','purposes','form','sharing','retention','rights']" :key="key"><h2>{{ copy[key][0] }}</h2><p v-if="typeof copy[key][1] === 'string'">{{ copy[key][1] }}</p><ul v-else class="privacy-list"><li v-for="item in copy[key][1]" :key="item">{{ item }}</li></ul></template><p class="legal-note">info@crobiz.cz · CROBIZ · {{ copy.updated }}</p></div></section></div>
+</template>
