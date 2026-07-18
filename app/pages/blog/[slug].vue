@@ -11,8 +11,10 @@ const { data: post } = await useAsyncData(articleQueryKey, () => {
 
   return query.all().then((documents) => documents.find((document) => {
     const folderLocale = String(document.path || document.id).match(/\/(cs|hr|en)\//)?.[1]
+    const fileSlug = String(document.path || '').split('/').pop()
     return folderLocale === locale.value
-      && document.slug === String(route.params.slug)
+      && (document.slug === String(route.params.slug)
+        || (import.meta.dev && fileSlug === String(route.params.slug)))
   }))
 })
 
@@ -37,6 +39,7 @@ setI18nParams(
 )
 
 const formattedDate = computed(() => {
+  if (!post.value.publishedAt) return ''
   const language = locale.value === 'cs' ? 'cs-CZ' : locale.value === 'hr' ? 'hr-HR' : 'en-GB'
   return new Intl.DateTimeFormat(language, {
     day: 'numeric',
@@ -73,7 +76,7 @@ useCustomPageSeo({
         <p class="eyebrow">{{ post.category }}</p>
         <h1 class="page-title">{{ post.title }}</h1>
         <p class="page-lead">{{ post.summary }}</p>
-        <p class="article-date">
+        <p v-if="post.publishedAt" class="article-date">
           <time :datetime="post.publishedAt">{{ formattedDate }}</time>
         </p>
         <div class="article-hero-image">

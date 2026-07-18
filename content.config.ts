@@ -98,17 +98,17 @@ const siteSchema = z.object({
 })
 
 const blogSchema = z.object({
-  translationKey: shortText,
-  slug: slugText,
+  translationKey: shortText.optional(),
+  slug: slugText.optional(),
   title: shortText,
-  category: shortText,
-  summary: longText,
-  cover: imagePath,
-  publishedAt: publicationDate,
-  draft: z.boolean().default(false),
-  seoTitle: shortText,
-  seoDescription: longText,
-  ctaText: longText,
+  category: shortText.optional(),
+  summary: longText.optional(),
+  cover: imagePath.optional(),
+  publishedAt: publicationDate.optional(),
+  draft: z.boolean().default(true),
+  seoTitle: shortText.optional(),
+  seoDescription: longText.optional(),
+  ctaText: longText.optional(),
 })
 
 const settingsSchema = z.object({
