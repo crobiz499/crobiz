@@ -22,13 +22,13 @@ Objava pokreće novu verziju web-stranice. Potrebno je pričekati nekoliko minut
 
 1. Otvorite **Content → Blog**.
 2. Odaberite jezik članka.
-3. Kliknite za dodavanje nove datoteke.
+3. Kliknite za dodavanje nove datoteke. Upišite samo naziv datoteke, primjerice `novi-clanak` — nemojte ponovno upisivati `blog/en/`, `blog/hr/` ili `blog/cs/`.
 4. Unesite:
    - naslov
    - kategoriju
    - kratki sažetak
    - naslovnu fotografiju
-   - datum objave
+   - datum objave u obliku `GGGG-MM-DD`
    - SEO naslov i opis
    - tekst poziva na kontakt
 5. Napišite sadržaj članka u glavnom editoru.

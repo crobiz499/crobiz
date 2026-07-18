@@ -16,7 +16,7 @@ const languageOptions = [
 const activeLanguage = computed(() => languageOptions.find((item) => item.code === locale.value) || languageOptions[0])
 
 const nav = computed(() => [
-  ['home', '/'], ['about', '/about'], ['services', '/services'], ['how', '/how-we-work'],
+  ['home', '/'], ['about', '/about'], ['services', '/services'], ['why', '/why-croatia'],
   ['blog', '/blog'], ['faq', '/faq'], ['contact', '/contact'],
 ])
 

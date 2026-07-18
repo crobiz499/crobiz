@@ -3,6 +3,8 @@ import { defineCollection, defineContentConfig, property, z } from '@nuxt/conten
 const shortText = z.string().min(1)
 const longText = property(z.string().min(1)).editor({ input: 'textarea' })
 const imagePath = property(z.string().min(1)).editor({ input: 'media' })
+const slugText = z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, 'Use lowercase letters, numbers, and hyphens only')
+const publicationDate = z.string().regex(/^\d{4}-\d{2}-\d{2}$/, 'Use the date format YYYY-MM-DD')
 const titleAndText = z.tuple([shortText, longText])
 const seoEntry = z.tuple([shortText, longText])
 
@@ -97,13 +99,12 @@ const siteSchema = z.object({
 
 const blogSchema = z.object({
   translationKey: shortText,
-  locale: z.enum(['cs', 'hr', 'en']),
-  slug: shortText,
+  slug: slugText,
   title: shortText,
   category: shortText,
   summary: longText,
   cover: imagePath,
-  publishedAt: shortText,
+  publishedAt: publicationDate,
   draft: z.boolean().default(false),
   seoTitle: shortText,
   seoDescription: longText,

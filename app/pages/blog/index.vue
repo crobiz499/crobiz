@@ -5,13 +5,16 @@ const { locale } = useI18n()
 const { data: blogDocuments } = await useAsyncData('crobiz-blog-index', () => {
   return queryCollection('blog')
     .where('draft', '=', false)
-    .select('id', 'translationKey', 'locale', 'slug', 'title', 'category', 'summary', 'cover', 'publishedAt')
+    .select('id', 'path', 'translationKey', 'slug', 'title', 'category', 'summary', 'cover', 'publishedAt')
     .order('publishedAt', 'DESC')
     .all()
 })
 
 const posts = computed(() => {
-  return (blogDocuments.value || []).filter((post) => post.locale === locale.value)
+  return (blogDocuments.value || []).filter((post) => {
+    const folderLocale = String(post.path || post.id).match(/\/(cs|hr|en)\//)?.[1]
+    return folderLocale === locale.value
+  })
 })
 
 usePageSeo('blog', { items: posts })

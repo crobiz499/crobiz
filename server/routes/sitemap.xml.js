@@ -6,14 +6,15 @@ export default defineEventHandler(async (event) => {
   const pages = ['', 'about', 'services', 'how-we-work', 'why-croatia', 'faq', 'blog', 'contact', 'privacy', 'cookies']
   const articles = await queryCollection(event, 'blog')
     .where('draft', '=', false)
-    .select('translationKey', 'locale', 'slug')
+    .select('id', 'path', 'translationKey', 'slug')
     .all()
 
   const localize = (locale, path) => `${base}${locale === 'cs' ? '' : `/${locale}`}${path ? `/${path}` : ''}`
   const articleGroups = Object.values(
     articles.reduce((groups, article) => {
+      const articleLocale = String(article.path || article.id).match(/\/(cs|hr|en)\//)?.[1]
       groups[article.translationKey] ||= {}
-      groups[article.translationKey][article.locale] = article.slug
+      groups[article.translationKey][articleLocale] = article.slug
       return groups
     }, {}),
   )
