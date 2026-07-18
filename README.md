@@ -34,6 +34,7 @@ Copy `.env.example` to `.env` for local secrets. Production values belong in the
 - `NUXT_PUBLIC_GA_MEASUREMENT_ID` — optional GA4 measurement ID
 - `STUDIO_GITHUB_CLIENT_ID` — GitHub OAuth app client ID
 - `STUDIO_GITHUB_CLIENT_SECRET` — GitHub OAuth app secret
+- `STUDIO_GITHUB_MODERATORS` — comma-separated whitelist of editor GitHub emails
 
 Without a Formspree ID, the contact form falls back to opening the visitor's email application.
 
@@ -45,9 +46,10 @@ Before giving the editor to the client:
 
 1. Deploy with `npm run build` to a host that supports Nuxt server-side routes.
 2. Create a GitHub OAuth app for the final domain.
-3. Add both `STUDIO_GITHUB_*` variables to the host.
-4. Give Ivana access to the private GitHub repository.
-5. Open `https://your-domain/_studio`, sign in, edit, and publish.
+3. Use `https://your-domain/__nuxt_studio/auth/github` as its authorization callback URL.
+4. Add the three `STUDIO_GITHUB_*` variables to the host, including Ivana's verified GitHub email in the moderator whitelist.
+5. Give Ivana access to the private GitHub repository.
+6. Open `https://your-domain/_studio`, sign in, edit, and publish.
 
 Publishing creates Git commits. A connected host should redeploy the site automatically after each content commit.
 
