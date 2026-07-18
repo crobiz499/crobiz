@@ -6,15 +6,15 @@ const setI18nParams = useSetI18nParams()
 
 const articleQueryKey = computed(() => `crobiz-article-${locale.value}-${route.params.slug}`)
 const { data: post } = await useAsyncData(articleQueryKey, () => {
-  let query = queryCollection('blog')
-  if (!import.meta.dev) query = query.where('draft', '=', false)
-
-  return query.all().then((documents) => documents.find((document) => {
+  return queryCollection('blog').all().then((documents) => documents.find((document) => {
     const folderLocale = String(document.path || document.id).match(/\/(cs|hr|en)\//)?.[1]
     const fileSlug = String(document.path || '').split('/').pop()
+    const isPublished = document.published === true
+      || (document.published == null && document.draft === false)
     return folderLocale === locale.value
       && (document.slug === String(route.params.slug)
-        || (import.meta.dev && fileSlug === String(route.params.slug)))
+        || fileSlug === String(route.params.slug))
+      && (import.meta.dev || isPublished)
   }))
 })
 
@@ -26,9 +26,12 @@ const translationQueryKey = computed(() => `crobiz-article-translations-${post.v
 const { data: translations } = await useAsyncData(translationQueryKey, () => {
   return queryCollection('blog')
     .where('translationKey', '=', post.value.translationKey)
-    .where('draft', '=', false)
-    .select('id', 'path', 'slug')
+    .select('id', 'path', 'slug', 'published', 'draft')
     .all()
+    .then((documents) => documents.filter((document) => {
+      return document.published === true
+        || (document.published == null && document.draft === false)
+    }))
 })
 
 setI18nParams(

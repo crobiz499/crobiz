@@ -5,6 +5,19 @@ const longText = property(z.string().min(1)).editor({ input: 'textarea' })
 const imagePath = property(z.string().min(1)).editor({ input: 'media' })
 const slugText = z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, 'Use lowercase letters, numbers, and hyphens only')
 const publicationDate = z.string().regex(/^\d{4}-\d{2}-\d{2}$/, 'Use the date format YYYY-MM-DD')
+const optionalImagePath = property(z.union([z.string().min(1), z.literal('')]).optional()).editor({
+  input: 'media',
+  label: 'Article image',
+  description: 'Required before the article is made public.',
+})
+const optionalSlug = property(z.union([slugText, z.literal('')]).optional()).editor({
+  label: 'URL slug',
+  description: 'Required before publishing. Use lowercase letters, numbers, and hyphens only.',
+})
+const optionalPublicationDate = property(z.union([publicationDate, z.literal('')]).optional()).editor({
+  label: 'Publication date',
+  description: 'Required before publishing. Use YYYY-MM-DD.',
+})
 const titleAndText = z.tuple([shortText, longText])
 const seoEntry = z.tuple([shortText, longText])
 
@@ -98,17 +111,33 @@ const siteSchema = z.object({
 })
 
 const blogSchema = z.object({
-  translationKey: shortText.optional(),
-  slug: slugText.optional(),
+  translationKey: property(shortText.optional()).editor({
+    label: 'Translation group',
+    description: 'Use the same value for matching Czech, Croatian, and English versions.',
+  }),
+  slug: optionalSlug,
   title: shortText,
-  category: shortText.optional(),
-  summary: longText.optional(),
-  cover: imagePath.optional(),
-  publishedAt: publicationDate.optional(),
-  draft: z.boolean().default(true),
-  seoTitle: shortText.optional(),
-  seoDescription: longText.optional(),
-  ctaText: longText.optional(),
+  category: property(shortText.optional()).editor({
+    label: 'Category',
+    description: 'Required before publishing.',
+  }),
+  summary: property(longText.optional()).editor({
+    label: 'Article summary',
+    description: 'Required before publishing. This appears on the blog card.',
+  }),
+  cover: optionalImagePath,
+  publishedAt: optionalPublicationDate,
+  published: property(z.boolean().optional()).editor({
+    label: 'Published',
+    description: 'Turn this ON after all required fields are complete.',
+  }),
+  draft: property(z.boolean().optional()).editor({ hidden: true }),
+  seoTitle: property(shortText.optional()).editor({ label: 'SEO title' }),
+  seoDescription: property(longText.optional()).editor({ label: 'SEO description' }),
+  ctaText: property(longText.optional()).editor({
+    label: 'Contact box text',
+    description: 'Text shown at the end of the article.',
+  }),
 })
 
 const settingsSchema = z.object({

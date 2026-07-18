@@ -4,17 +4,24 @@ const { locale } = useI18n()
 
 const { data: blogDocuments } = await useAsyncData('crobiz-blog-index', () => {
   return queryCollection('blog')
-    .where('draft', '=', false)
-    .select('id', 'path', 'translationKey', 'slug', 'title', 'category', 'summary', 'cover', 'publishedAt')
+    .select('id', 'path', 'translationKey', 'slug', 'title', 'category', 'summary', 'cover', 'publishedAt', 'published', 'draft')
     .order('publishedAt', 'DESC')
     .all()
 })
 
 const posts = computed(() => {
-  return (blogDocuments.value || []).filter((post) => {
-    const folderLocale = String(post.path || post.id).match(/\/(cs|hr|en)\//)?.[1]
-    return folderLocale === locale.value
-  })
+  return (blogDocuments.value || [])
+    .map((post) => ({
+      ...post,
+      slug: post.slug || String(post.path || '').split('/').pop(),
+    }))
+    .filter((post) => {
+      const folderLocale = String(post.path || post.id).match(/\/(cs|hr|en)\//)?.[1]
+      return folderLocale === locale.value
+        && (post.published === true || (post.published == null && post.draft === false))
+        && post.slug
+        && post.summary
+    })
 })
 
 usePageSeo('blog', { items: posts })

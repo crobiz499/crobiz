@@ -8,17 +8,23 @@ const services = computed(() => site.value.services.groups.slice(0, 6))
 
 const { data: blogDocuments } = await useAsyncData('crobiz-blog-index', () => {
   return queryCollection('blog')
-    .where('draft', '=', false)
-    .select('id', 'path', 'translationKey', 'slug', 'title', 'category', 'summary', 'cover', 'publishedAt')
+    .select('id', 'path', 'translationKey', 'slug', 'title', 'category', 'summary', 'cover', 'publishedAt', 'published', 'draft')
     .order('publishedAt', 'DESC')
     .all()
 })
 
 const latestPosts = computed(() => {
   return (blogDocuments.value || [])
+    .map((post) => ({
+      ...post,
+      slug: post.slug || String(post.path || '').split('/').pop(),
+    }))
     .filter((post) => {
       const folderLocale = String(post.path || post.id).match(/\/(cs|hr|en)\//)?.[1]
       return folderLocale === locale.value
+        && (post.published === true || (post.published == null && post.draft === false))
+        && post.slug
+        && post.summary
     })
     .slice(0, 3)
 })

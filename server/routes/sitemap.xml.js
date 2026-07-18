@@ -5,18 +5,23 @@ export default defineEventHandler(async (event) => {
   const base = 'https://www.crobiz.cz'
   const pages = ['', 'about', 'services', 'how-we-work', 'why-croatia', 'faq', 'blog', 'contact', 'privacy', 'cookies']
   const articles = await queryCollection(event, 'blog')
-    .where('draft', '=', false)
-    .select('id', 'path', 'translationKey', 'slug')
+    .select('id', 'path', 'translationKey', 'slug', 'published', 'draft')
     .all()
 
   const localize = (locale, path) => `${base}${locale === 'cs' ? '' : `/${locale}`}${path ? `/${path}` : ''}`
   const articleGroups = Object.values(
-    articles.reduce((groups, article) => {
+    articles
+      .filter((article) => {
+        return article.published === true
+          || (article.published == null && article.draft === false)
+      })
+      .reduce((groups, article) => {
       const articleLocale = String(article.path || article.id).match(/\/(cs|hr|en)\//)?.[1]
+      const articleSlug = article.slug || String(article.path || '').split('/').pop()
       groups[article.translationKey] ||= {}
-      groups[article.translationKey][articleLocale] = article.slug
+      groups[article.translationKey][articleLocale] = articleSlug
       return groups
-    }, {}),
+      }, {}),
   )
     .filter((group) => group.cs && group.hr && group.en)
     .map((group) => ({
