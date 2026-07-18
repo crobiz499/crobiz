@@ -1,4 +1,31 @@
 <script setup>
-const site = useSiteContent(); usePageSeo('blog')
+const site = useSiteContent()
+const { locale } = useI18n()
+
+const { data: blogDocuments } = await useAsyncData('crobiz-blog-index', () => {
+  return queryCollection('blog')
+    .where('draft', '=', false)
+    .select('id', 'translationKey', 'locale', 'slug', 'title', 'category', 'summary', 'cover', 'publishedAt')
+    .order('publishedAt', 'DESC')
+    .all()
+})
+
+const posts = computed(() => {
+  return (blogDocuments.value || []).filter((post) => post.locale === locale.value)
+})
+
+usePageSeo('blog', { items: posts })
 </script>
-<template><div><PageHero :eyebrow="site.blog.eyebrow" :title="site.blog.title" :lead="site.blog.lead"/><section class="section" style="padding-top:20px"><div class="container"><div class="blog-grid"><BlogCard v-for="(post,index) in site.blog.posts" :key="post[0]" :post="post" :index="index"/></div></div></section></div></template>
+
+<template>
+  <div>
+    <PageHero :eyebrow="site.blog.eyebrow" :title="site.blog.title" :lead="site.blog.lead" />
+    <section class="section" style="padding-top: 20px">
+      <div class="container">
+        <div class="blog-grid">
+          <BlogCard v-for="post in posts" :key="post.id" :post="post" />
+        </div>
+      </div>
+    </section>
+  </div>
+</template>

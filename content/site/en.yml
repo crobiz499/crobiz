@@ -1,0 +1,182 @@
+locale: en
+seo:
+  home:
+    - Business, property and life in Croatia
+    - CROBIZ helps Czech citizens with business, property purchases, administration and life in Croatia through clear guidance and trusted local partners.
+  about:
+    - "About CROBIZ: consultancy in Croatia"
+    - CROBIZ is a specialist consultancy founded by Ivana Pisac, supporting Czech citizens, entrepreneurs and investors in Croatia.
+  services:
+    - Croatia services for Czech clients
+    - Support with business, property, administration, tourism, insurance and communication for Czech citizens planning a move or investment in Croatia.
+  how:
+    - How we work
+    - From the initial consultation and a clear plan through coordination and long-term support. Discover how CROBIZ works with its clients.
+  why:
+    - Why invest and live in Croatia
+    - "Explore why Croatia appeals to Czech citizens and investors: the euro, EU membership, a stable market, developed tourism and quality of life."
+  faq:
+    - "Croatia for Czech citizens: FAQs"
+    - Answers about buying property, starting a company, documentation, remote procedures and everyday life for Czech citizens in Croatia.
+  blog:
+    - "Croatia: property, business and living guides"
+    - Practical guides to property, business, administration, tourism, insurance and everyday life in Croatia for Czech citizens and investors.
+  contact:
+    - Consultation for your plans in Croatia
+    - Contact CROBIZ in Czech, Croatian or English. We will review your plans in Croatia and suggest a clear next step and suitable specialists.
+home:
+  eyebrow: Czechia × Croatia
+  title: Your trusted partner for business, investment and life in Croatia.
+  lead: We help Czech citizens, entrepreneurs and investors bring their plans in Croatia to life. We connect you with trusted professionals and guide you throughout the process.
+  trust: Personal approach · local knowledge · trusted partners
+  categories:
+    - - Property
+      - Purchase support and document coordination.
+    - - Business
+      - Practical help entering the Croatian market.
+    - - Administration
+      - Clarity across procedures, forms and communication.
+    - - Trusted partners
+      - A professional network for every stage of your project.
+  introTitle: Less uncertainty. More clear next steps.
+  introText: CROBIZ combines knowledge of the Czech and Croatian environments with personal guidance. You gain one reliable point of contact, clear communication and coordination of the right people for your plan.
+  servicesTitle: Support exactly where you need it
+  whyTitle: Why Croatia?
+  whyText: A safe European country with the euro, a stable market, strong tourism and an exceptional quality of life.
+  processTitle: From the first question to a complete solution
+  process:
+    - - "01"
+      - Initial consultation
+      - We learn about your goal, situation and priorities.
+    - - "02"
+      - A clear plan
+      - We define the steps, documents and specialists required.
+    - - "03"
+      - Coordination
+      - We connect everyone involved and keep the process moving.
+    - - "04"
+      - Long-term support
+      - We remain your partner after completion.
+about:
+  eyebrow: About CROBIZ
+  title: Specialist consultancy between Czechia and Croatia.
+  lead: CROBIZ is a specialist consultancy supporting Czech citizens, entrepreneurs and investors in Croatia.
+  storyTitle: About CROBIZ
+  story: CROBIZ was founded by Ivana Pisac, whose excellent knowledge of Croatian and Czech, together with the business environments of both countries, helps clients coordinate administrative and business processes.
+  values:
+    - - Two languages, shared understanding
+      - Fluent communication in Czech and Croatian without unnecessary misunderstandings.
+    - - Personal approach
+      - A solution adapted to your goals, budget and timeline.
+    - - Professional coordination
+      - Clear steps, regular updates and ownership of communication.
+    - - Long-term relationships
+      - We aim for trusted partnerships, not one-off transactions.
+  networkTitle: A network of trusted partners across Croatia
+how:
+  eyebrow: How we work
+  title: A clear process from the initial consultation to long-term support.
+  lead: Every engagement is built around clear steps, regular communication and coordination with the right professionals.
+services:
+  eyebrow: Services
+  title: Comprehensive support for your plans in Croatia.
+  lead: From early research to coordinating a specific procedure, we define the right path and connect you with the professionals you need.
+  groups:
+    - - Business in Croatia
+      - - Business environment information
+        - Support establishing a company or trade
+        - Administrative support
+        - Accounting service introductions
+        - Business bank account assistance
+    - - Property
+      - - Property purchase support
+        - Process coordination
+        - Document assistance
+        - Communication with transaction parties
+    - - Administrative support
+      - - Communication with institutions
+        - Document and form assistance
+        - Procedure coordination
+        - Clear explanations of next steps
+    - - Legal and accounting introductions
+      - - Introductions to lawyers and notaries
+        - Introductions to accountants and tax advisers
+        - Communication coordination
+    - - Insurance
+      - - Property insurance
+        - Vehicle and travel insurance
+        - Health and business insurance
+    - - Tourism
+      - - Apartment categorisation support
+        - Administrative support
+        - Help launching tourism activities
+    - - Translation and communication
+      - - Croatian–Czech and Czech–Croatian
+        - Business communication
+        - Institutional communication support
+  disclaimerTitle: Important notice
+  disclaimer: CROBIZ does not provide legal or accounting services. We connect clients with trusted lawyers, notaries, accountants and other professionals and coordinate communication.
+  partners:
+    - Lawyers
+    - Notaries
+    - Accountants
+    - Tax advisers
+    - Architects
+    - Designers
+    - Surveyors
+    - Construction companies
+    - Property agents
+    - Insurers
+    - Court interpreters
+why:
+  eyebrow: Why Croatia
+  title: A stable European environment with exceptional potential.
+  lead: Croatia combines the security of the European Union, the euro, a strong tourism economy and a lifestyle that continues to attract Czech citizens and investors.
+  reasons:
+    - - European Union member
+      - A shared legal and economic framework makes movement, investment and business easier.
+    - - Euro currency
+      - Simpler payments and investment planning with less currency risk.
+    - - Stable market
+      - A predictable environment with growing international interest.
+    - - Attractive investments
+      - Opportunities in property, tourism, services and local businesses.
+    - - Developed tourism
+      - Strong international demand and long-term destination recognition.
+    - - Excellent connections
+      - Road and air connections with Czechia throughout the year.
+    - - Quality of life
+      - Safety, nature, climate, food and proximity to the sea.
+  sectorsTitle: Opportunities that make sense
+  sectors:
+    - Residential property
+    - Tourism accommodation
+    - Services and commerce
+    - Local partnerships
+faq:
+  eyebrow: Frequently asked questions
+  title: Answers that help you get started.
+  lead: Every case is different, but these answers provide a useful starting point.
+  items:
+    - - How do I buy property in Croatia?
+      - The process starts with defining your budget and requirements, continues with property and document checks, and ends with the contract, payment and ownership registration. CROBIZ coordinates communication and introduces the appropriate professional.
+    - - How do I establish a company?
+      - We help identify a suitable legal form, organise the documentation, registration, bank account and accounting relationship.
+    - - How long does the process take?
+      - Timing depends on the service, document readiness and institutions involved. We provide a realistic timeline after the initial consultation.
+    - - Can everything be handled remotely?
+      - Many steps can be completed online or through a power of attorney. We will tell you when personal presence is necessary or beneficial.
+    - - Which languages do you speak?
+      - We communicate in Czech, Croatian and English and coordinate communication with specialists and institutions.
+    - - Do you work throughout Croatia?
+      - Yes. Our partner network allows us to support projects in different parts of Croatia, subject to the project and specialist availability.
+contact:
+  eyebrow: Contact
+  title: Let’s talk about your plans.
+  lead: Tell us briefly about your situation. We will get back to clarify your needs and suggest the best next step.
+  hours: Monday–Friday · 9:00–17:00
+  response: We usually respond within one working day.
+blog:
+  eyebrow: Croatia guide
+  title: Practical information for confident decisions.
+  lead: Clear articles about property, business, administration and life in Croatia.

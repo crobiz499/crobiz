@@ -1,7 +1,36 @@
 <script setup>
-defineProps({ post:Array, index:Number })
-const { t } = useI18n()
+const props = defineProps({
+  post: {
+    type: Object,
+    required: true,
+  },
+})
+
+const { t, locale } = useI18n()
 const localePath = useLocalePath()
-const images = useSiteImages()
+const formattedDate = computed(() => {
+  const language = locale.value === 'cs' ? 'cs-CZ' : locale.value === 'hr' ? 'hr-HR' : 'en-GB'
+  return new Intl.DateTimeFormat(language, {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  }).format(new Date(`${props.post.publishedAt}T12:00:00`))
+})
 </script>
-<template><article class="blog-card"><ImagePlaceholder :label="post[2]" :src="images.blog[index]"/><div class="blog-card__body"><div class="blog-meta"><span>{{ post[2] }}</span><span>0{{ index + 1 }}</span></div><h2>{{ post[1] }}</h2><p>{{ post[3] }}</p><NuxtLink class="text-link" :to="localePath(`/blog/${post[0]}`)">{{ t('actions.read') }} <span>→</span></NuxtLink></div></article></template>
+
+<template>
+  <article class="blog-card">
+    <ImagePlaceholder :label="post.category" :src="post.cover" />
+    <div class="blog-card__body">
+      <div class="blog-meta">
+        <span>{{ post.category }}</span>
+        <time :datetime="post.publishedAt">{{ formattedDate }}</time>
+      </div>
+      <h2>{{ post.title }}</h2>
+      <p>{{ post.summary }}</p>
+      <NuxtLink class="text-link" :to="localePath(`/blog/${post.slug}`)">
+        {{ t('actions.read') }} <span>→</span>
+      </NuxtLink>
+    </div>
+  </article>
+</template>

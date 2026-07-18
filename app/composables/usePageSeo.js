@@ -6,45 +6,13 @@ const localeDetails = {
   en: { language: 'en-GB', ogLocale: 'en_GB' },
 }
 
-const seoCopy = {
-  cs: {
-    home: ['Podnikání, nemovitosti a život v Chorvatsku', 'CROBIZ pomáhá Čechům s podnikáním, koupí nemovitosti, administrativou a životem v Chorvatsku. Česky, osobně a s prověřenými partnery.'],
-    about: ['O CROBIZ: poradenství v Chorvatsku', 'CROBIZ je specializovaná poradenská společnost pro české občany, podnikatele a investory v Chorvatsku, kterou založila Ivana Pisac.'],
-    services: ['Služby v Chorvatsku pro Čechy', 'Pomoc Čechům s podnikáním, nemovitostmi, administrativou, turismem, pojištěním a komunikací v Chorvatsku. Vše koordinuje CROBIZ.'],
-    how: ['Jak spolupracujeme', 'Od úvodní konzultace přes jasný plán a koordinaci až po dlouhodobou podporu. Poznejte způsob spolupráce se společností CROBIZ.'],
-    why: ['Proč investovat a žít v Chorvatsku', 'Zjistěte, proč Chorvatsko přitahuje české občany a investory: euro, členství v EU, stabilní trh, silný turismus a vysoká kvalita života.'],
-    faq: ['Chorvatsko pro Čechy: časté otázky', 'Odpovědi na časté otázky Čechů o koupi nemovitosti, založení firmy, dokumentech, vyřízení na dálku a životě v Chorvatsku.'],
-    blog: ['Chorvatsko: nemovitosti, podnikání a život', 'Praktické články pro Čechy o koupi nemovitosti, podnikání, administrativě, turismu, pojištění a každodenním životě v Chorvatsku.'],
-    contact: ['Konzultace pro vaše plány v Chorvatsku', 'Kontaktujte CROBIZ v češtině nebo chorvatštině. Probereme váš plán v Chorvatsku a navrhneme jasný další krok a vhodné odborníky.'],
-  },
-  hr: {
-    home: ['Poslovanje, nekretnine i život u Hrvatskoj', 'CROBIZ pomaže češkim građanima s poslovanjem, kupnjom nekretnina, administracijom i životom u Hrvatskoj uz provjerene lokalne partnere.'],
-    about: ['O CROBIZ-u: podrška u Hrvatskoj', 'CROBIZ je specijalizirana konzultantska tvrtka za češke građane, poduzetnike i investitore u Hrvatskoj, koju je osnovala Ivana Pisac.'],
-    services: ['Usluge u Hrvatskoj za češke klijente', 'Podrška češkim građanima pri poslovanju, kupnji nekretnina, administraciji, turizmu, osiguranju i komunikaciji u Hrvatskoj.'],
-    how: ['Kako surađujemo', 'Od uvodnih konzultacija preko jasnog plana i koordinacije do dugoročne podrške. Upoznajte način suradnje s tvrtkom CROBIZ.'],
-    why: ['Zašto ulagati i živjeti u Hrvatskoj', 'Saznajte zašto Hrvatska privlači češke građane i ulagače: euro, članstvo u EU, stabilno tržište, razvijen turizam i visoka kvaliteta života.'],
-    faq: ['Hrvatska za češke građane: česta pitanja', 'Odgovori o kupnji nekretnine, osnivanju tvrtke, dokumentaciji, postupcima na daljinu i životu čeških građana u Hrvatskoj.'],
-    blog: ['Hrvatska: nekretnine, poslovanje i život', 'Praktični članci o kupnji nekretnina, poslovanju, administraciji, turizmu, osiguranju i životu čeških građana u Hrvatskoj.'],
-    contact: ['Konzultacije za vaše planove u Hrvatskoj', 'Kontaktirajte CROBIZ na hrvatskom ili češkom jeziku. Razmotrit ćemo vaš plan u Hrvatskoj i predložiti jasan sljedeći korak.'],
-  },
-  en: {
-    home: ['Business, property and life in Croatia', 'CROBIZ helps Czech citizens with business, property purchases, administration and life in Croatia through clear guidance and trusted local partners.'],
-    about: ['About CROBIZ: consultancy in Croatia', 'CROBIZ is a specialist consultancy founded by Ivana Pisac, supporting Czech citizens, entrepreneurs and investors in Croatia.'],
-    services: ['Croatia services for Czech clients', 'Support with business, property, administration, tourism, insurance and communication for Czech citizens planning a move or investment in Croatia.'],
-    how: ['How we work', 'From the initial consultation and a clear plan through coordination and long-term support. Discover how CROBIZ works with its clients.'],
-    why: ['Why invest and live in Croatia', 'Explore why Croatia appeals to Czech citizens and investors: the euro, EU membership, a stable market, developed tourism and quality of life.'],
-    faq: ['Croatia for Czech citizens: FAQs', 'Answers about buying property, starting a company, documentation, remote procedures and everyday life for Czech citizens in Croatia.'],
-    blog: ['Croatia: property, business and living guides', 'Practical guides to property, business, administration, tourism, insurance and everyday life in Croatia for Czech citizens and investors.'],
-    contact: ['Consultation for your plans in Croatia', 'Contact CROBIZ in Czech, Croatian or English. We will review your plans in Croatia and suggest a clear next step and suitable specialists.'],
-  },
-}
-
 const resolveValue = (value) => typeof value === 'function' ? value() : unref(value)
 
 const useSeoBase = (options) => {
   const { locale } = useI18n()
   const route = useRoute()
   const site = useSiteContent()
+  const settings = useSiteSettings()
   const localePath = useLocalePath()
 
   const language = computed(() => localeDetails[locale.value]?.language || 'cs-CZ')
@@ -73,9 +41,10 @@ const useSeoBase = (options) => {
     const organization = {
       '@type': 'Organization',
       '@id': `${SITE_URL}/#organization`,
-      name: 'CROBIZ',
+      name: settings.value?.companyName || 'CROBIZ',
       url: SITE_URL,
-      email: 'info@crobiz.cz',
+      email: settings.value?.publicEmail || 'info@crobiz.cz',
+      ...(settings.value?.phone ? { telephone: settings.value.phone } : {}),
       founder: { '@type': 'Person', name: 'Ivana Pisac' },
       areaServed: [
         { '@type': 'Country', name: 'Czechia' },
@@ -121,13 +90,14 @@ const useSeoBase = (options) => {
     }
 
     if (options.section === 'blog') {
+      const posts = resolveValue(options.items) || []
       webpage.mainEntity = {
         '@type': 'ItemList',
-        itemListElement: site.value.blog.posts.map((post, index) => ({
+        itemListElement: posts.map((post, index) => ({
           '@type': 'ListItem',
           position: index + 1,
-          name: post[1],
-          url: `${SITE_URL}${localePath(`/blog/${post[0]}`)}`,
+          name: post.title,
+          url: `${SITE_URL}${localePath(`/blog/${post.slug}`)}`,
         })),
       }
     }
@@ -148,10 +118,9 @@ const useSeoBase = (options) => {
 }
 
 export const usePageSeo = (section, overrides = {}) => {
-  const { locale } = useI18n()
   const site = useSiteContent()
   const fallback = computed(() => site.value[section])
-  const localized = computed(() => seoCopy[locale.value]?.[section])
+  const localized = computed(() => site.value.seo?.[section])
 
   useSeoBase({
     section,
@@ -160,6 +129,7 @@ export const usePageSeo = (section, overrides = {}) => {
     pageType: overrides.pageType || (section === 'about' ? 'AboutPage' : section === 'contact' ? 'ContactPage' : section === 'faq' ? 'FAQPage' : section === 'blog' ? 'CollectionPage' : 'WebPage'),
     ogType: overrides.ogType,
     schema: overrides.schema,
+    items: overrides.items,
   })
 }
 
