@@ -12,7 +12,7 @@ defineProps({ light: Boolean, compact: Boolean })
       :sizes="compact ? '140px sm:180px' : '220px sm:260px'"
       densities="1x 2x"
       format="webp"
-      quality="90"
+      quality="100"
       :loading="compact ? 'eager' : 'lazy'"
       :fetchpriority="compact ? 'high' : 'low'"
       decoding="async"

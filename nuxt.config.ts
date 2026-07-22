@@ -101,7 +101,7 @@ export default defineNuxtConfig({
     },
   },
   image: {
-    quality: 82,
+    quality: 100,
   },
   studio: {
     route: '/_studio',
