@@ -9,10 +9,10 @@ export default defineNuxtConfig({
   studio: {
     route: '/_studio',
     auth: {
-      github: {
-        clientId: process.env.STUDIO_GITHUB_CLIENT_ID,
-        clientSecret: process.env.STUDIO_GITHUB_CLIENT_SECRET,
-        redirectURL: process.env.STUDIO_GITHUB_REDIRECT_URL,
+      google: {
+        clientId: process.env.STUDIO_GOOGLE_CLIENT_ID,
+        clientSecret: process.env.STUDIO_GOOGLE_CLIENT_SECRET,
+        redirectURL: process.env.STUDIO_GOOGLE_REDIRECT_URL,
       },
     },
     repository: {
