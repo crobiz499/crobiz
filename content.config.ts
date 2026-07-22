@@ -1,13 +1,19 @@
 import { defineCollection, defineContentConfig, property, z } from '@nuxt/content'
 
-const requiredText = (label: string, description?: string) => property(z.string().min(1)).editor({ label, description })
-const requiredArea = (label: string, description?: string) => property(z.string().min(1)).editor({ input: 'textarea', label, description })
-const imageField = (label: string, description?: string) => property(z.string().min(1)).editor({ input: 'media', label, description })
+const shortText = z.string().trim().min(1).max(240)
+const longText = z.string().trim().min(1).max(5_000)
+const safeImagePath = z.string()
+  .max(240)
+  .regex(/^\/images\/[a-zA-Z0-9/_-]+\.(?:avif|jpe?g|png|webp)$/i, 'Odaberite JPG, PNG, WebP ili AVIF datoteku iz mape images')
+
+const requiredText = (label: string, description?: string) => property(shortText).editor({ label, description })
+const requiredArea = (label: string, description?: string) => property(longText).editor({ input: 'textarea', label, description })
+const imageField = (label: string, description?: string) => property(safeImagePath).editor({ input: 'media', label, description })
 const group = <T extends z.ZodTypeAny>(schema: T, label: string, description?: string) => property(schema).editor({ label, description })
-const slugText = z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, 'Koristite samo mala slova, brojeve i crtice')
+const slugText = z.string().max(100).regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, 'Koristite samo mala slova, brojeve i crtice')
 const publicationDate = z.string().regex(/^\d{4}-\d{2}-\d{2}$/, 'Datum mora biti u formatu GGGG-MM-DD')
 
-const optionalImagePath = property(z.union([z.string().min(1), z.literal('')]).optional()).editor({
+const optionalImagePath = property(z.union([safeImagePath, z.literal('')]).optional()).editor({
   input: 'media',
   label: 'Naslovna fotografija',
   description: 'Odaberite fotografiju koja će se prikazati na kartici i na vrhu članka.',
@@ -129,36 +135,36 @@ const siteSchema = z.object({
 })
 
 const blogSchema = z.object({
-  translationKey: property(z.string().min(1).optional()).editor({
+  translationKey: property(slugText.optional()).editor({
     label: 'ID grupe prijevoda',
     description: 'Za prijevode istog članka upotrijebite potpuno isti ID u sva četiri jezika.',
   }),
   slug: optionalSlug,
-  title: property(z.string().min(1)).editor({
+  title: property(z.string().trim().min(1).max(160)).editor({
     label: 'Naslov članka',
     description: 'Glavni naslov koji će čitatelji vidjeti.',
   }),
-  category: property(z.string().min(1).optional()).editor({
+  category: property(z.string().trim().min(1).max(80).optional()).editor({
     label: 'Kategorija',
     description: 'Kratka oznaka teme, primjerice Nekretnine ili Poslovanje.',
   }),
-  summary: property(z.string().min(1).optional()).editor({
+  summary: property(z.string().trim().min(1).max(600).optional()).editor({
     input: 'textarea',
     label: 'Kratki sažetak',
     description: 'Dvije ili tri rečenice koje se prikazuju na kartici članka.',
   }),
   cover: optionalImagePath,
   publishedAt: optionalPublicationDate,
-  seoTitle: property(z.string().min(1).optional()).editor({
+  seoTitle: property(z.string().trim().min(1).max(100).optional()).editor({
     label: 'SEO naslov',
     description: 'Može biti jednak naslovu članka. Preporučena duljina je do približno 60 znakova.',
   }),
-  seoDescription: property(z.string().min(1).optional()).editor({
+  seoDescription: property(z.string().trim().min(1).max(320).optional()).editor({
     input: 'textarea',
     label: 'SEO opis',
     description: 'Kratak opis za tražilice, idealno približno 140–160 znakova.',
   }),
-  ctaText: property(z.string().min(1).optional()).editor({
+  ctaText: property(z.string().trim().min(1).max(1_000).optional()).editor({
     input: 'textarea',
     label: 'Završna kontaktna poruka',
     description: 'Tekst poziva na kontakt koji se prikazuje na kraju članka.',
@@ -174,7 +180,7 @@ const settingsSchema = z.object({
   companyName: requiredText('Naziv tvrtke'),
   publicEmail: property(z.string().email()).editor({ label: 'Javna e-mail adresa' }),
   directEmail: property(z.string().email()).editor({ label: 'Izravna e-mail adresa' }),
-  phone: property(z.string()).editor({ label: 'Telefon ili WhatsApp', description: 'Polje može ostati prazno.' }),
+  phone: property(z.string().max(40).regex(/^[0-9+().\s-]*$/, 'Koristite samo brojke i telefonske znakove')).editor({ label: 'Telefon ili WhatsApp', description: 'Polje može ostati prazno.' }),
   images: group(z.object({
     coast: imageField('Hrvatska obala'),
     meeting: imageField('Poslovni sastanak'),
