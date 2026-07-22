@@ -9,6 +9,13 @@ export default defineNuxtConfig({
   modules: ['@nuxt/content', '@nuxtjs/i18n', '@nuxt/image', 'nuxt-studio'],
   studio: {
     route: '/_studio',
+    auth: {
+      github: {
+        clientId: process.env.STUDIO_GITHUB_CLIENT_ID,
+        clientSecret: process.env.STUDIO_GITHUB_CLIENT_SECRET,
+        redirectURL: process.env.STUDIO_GITHUB_REDIRECT_URL,
+      },
+    },
     repository: {
       provider: 'github',
       owner: 'crobiz499',
