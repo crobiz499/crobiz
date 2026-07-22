@@ -4,7 +4,19 @@ defineProps({ light: Boolean, compact: Boolean })
 
 <template>
   <span class="brand" :class="{ 'brand--light': light, 'brand--compact': compact }">
-    <img src="/images/crobiz-logo-transparent.png" alt="CroBiz — Your trusted partner in Croatia">
+    <NuxtImg
+      src="/images/crobiz-logo-transparent.png"
+      alt="CroBiz — Your trusted partner in Croatia"
+      :width="compact ? 180 : 260"
+      :height="compact ? 55 : 80"
+      :sizes="compact ? '140px sm:180px' : '220px sm:260px'"
+      densities="1x 2x"
+      format="webp"
+      quality="78"
+      :loading="compact ? 'eager' : 'lazy'"
+      :fetchpriority="compact ? 'high' : 'low'"
+      decoding="async"
+    />
   </span>
 </template>
 

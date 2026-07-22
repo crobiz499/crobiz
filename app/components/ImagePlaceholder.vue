@@ -3,8 +3,27 @@ defineProps({ label: { type:String, default:'' }, src:String, portrait:Boolean, 
 </script>
 
 <template>
-  <div class="image-placeholder" :class="{ 'image-placeholder--portrait':portrait, 'image-placeholder--tall':tall, 'image-placeholder--filled':src }" role="img" :aria-label="label">
-    <NuxtImg v-if="src" class="image-placeholder__image" :src="src" :alt="label" :width="portrait ? 1024 : 1536" :height="portrait ? 1280 : 1024" format="webp" quality="84" :loading="eager ? 'eager' : 'lazy'" :fetchpriority="eager ? 'high' : 'auto'" />
+  <div
+    class="image-placeholder"
+    :class="{ 'image-placeholder--portrait':portrait, 'image-placeholder--tall':tall, 'image-placeholder--filled':src }"
+    :role="src ? undefined : 'img'"
+    :aria-label="src ? undefined : label"
+  >
+    <NuxtImg
+      v-if="src"
+      class="image-placeholder__image"
+      :src="src"
+      :alt="label"
+      :width="portrait ? 720 : 1280"
+      :height="portrait ? 900 : 853"
+      sizes="xs:100vw sm:100vw md:100vw lg:50vw xl:620px"
+      densities="1x 2x"
+      format="webp"
+      quality="74"
+      :loading="eager ? 'eager' : 'lazy'"
+      :fetchpriority="eager ? 'high' : 'auto'"
+      decoding="async"
+    />
     <template v-else>
       <div class="image-placeholder__horizon" />
       <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="5" y="7" width="38" height="34" rx="5"/><circle cx="17" cy="18" r="4"/><path d="m9 35 10-10 7 7 5-5 8 8"/></svg>
