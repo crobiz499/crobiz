@@ -53,6 +53,16 @@ Before giving the editor to the client:
 
 Publishing creates Git commits. A connected host should redeploy the site automatically after each content commit.
 
+## Netlify deployment
+
+1. In Ivana's Netlify account, import the `crobiz499/crobiz` GitHub repository.
+2. Keep the detected build command `npm run build` and publish directory `dist`.
+3. Deploy from the `main` branch. The `.nvmrc` file pins builds to Node.js 20.
+4. Add the `STUDIO_GITHUB_CLIENT_ID`, `STUDIO_GITHUB_CLIENT_SECRET`, and `STUDIO_GITHUB_MODERATORS` environment variables in Netlify.
+5. Redeploy after saving the variables, then test `https://your-domain/_studio` and publish a small content change.
+
+Do not store the OAuth client secret in this repository. Keep it only in Netlify's environment settings.
+
 ## Formspree setup
 
 1. Create the form in Ivana's Formspree account.
