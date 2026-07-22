@@ -29,6 +29,24 @@ export default defineNuxtConfig({
     appManifest: true,
     checkOutdatedBuildInterval: false,
   },
+  hooks: {
+    'build:manifest': (manifest) => {
+      // Studio is loaded on demand after an authenticated editor activates it.
+      // Keep its large host bundle out of public-page resource hints so normal
+      // visitors do not download editor-only JavaScript in the background.
+      const studioResources = new Set<string>()
+      for (const [key, entry] of Object.entries(manifest)) {
+        if (!key.includes('/nuxt-studio/')) continue
+        studioResources.add(key)
+        for (const imported of entry.imports || []) studioResources.add(imported)
+      }
+
+      for (const entry of Object.values(manifest)) {
+        if (!entry.isEntry || !entry.dynamicImports) continue
+        entry.dynamicImports = entry.dynamicImports.filter((key) => !studioResources.has(key))
+      }
+    },
+  },
   routeRules: {
     '/': { prerender: true },
     '/en/': { prerender: true },
