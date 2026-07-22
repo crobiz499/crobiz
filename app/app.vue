@@ -18,6 +18,5 @@ useHead(() => ({
     </main>
     <SiteFooter />
     <CookieBanner />
-    <StudioMobileExit />
   </div>
 </template>

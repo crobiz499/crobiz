@@ -3,7 +3,7 @@ const route = useRoute()
 const contentLocale = String(route.params.contentLocale)
 const contentSlug = String(route.params.contentSlug)
 
-if (!['cs', 'hr', 'en'].includes(contentLocale)) {
+if (!['cs', 'sk', 'hr', 'en'].includes(contentLocale)) {
   throw createError({ statusCode: 404, statusMessage: 'Article not found' })
 }
 

@@ -1,16 +1,16 @@
 ---
-translationKey: company-formation
-locale: en
-slug: starting-company
 title: How to establish a company in Croatia
 category: Business
-summary: The key decisions, documents and partners you will need.
 cover: /images/ai/business-meeting.png
-publishedAt: 2026-07-10
-draft: false
-seoTitle: How to establish a company in Croatia
-seoDescription: The key decisions, documents and partners you will need.
 ctaText: CROBIZ helps create a clear plan, introduces trusted partners and coordinates communication throughout the process.
+published: true
+publishedAt: 2026-07-10
+seoDescription: The key decisions, documents and partners you will need.
+seoTitle: How to establish a company in Croatia
+slug: starting-company
+summary: The key decisions, documents and partners you will need.
+translationKey: company-formation
+locale: en
 ---
 
 ## A good decision starts with the right information.

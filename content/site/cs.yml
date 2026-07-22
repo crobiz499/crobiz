@@ -1,29 +1,46 @@
-locale: cs
-seo:
-  home:
-    - Podnikání, nemovitosti a život v Chorvatsku
-    - CROBIZ pomáhá Čechům s podnikáním, koupí nemovitosti, administrativou a životem v Chorvatsku. Česky, osobně a s prověřenými partnery.
-  about:
-    - "O CROBIZ: poradenství v Chorvatsku"
-    - CROBIZ je specializovaná poradenská společnost pro české občany, podnikatele a investory v Chorvatsku, kterou založila Ivana Pisac.
-  services:
-    - Služby v Chorvatsku pro Čechy
-    - Pomoc Čechům s podnikáním, nemovitostmi, administrativou, turismem, pojištěním a komunikací v Chorvatsku. Vše koordinuje CROBIZ.
-  how:
-    - Jak spolupracujeme
-    - Od úvodní konzultace přes jasný plán a koordinaci až po dlouhodobou podporu. Poznejte způsob spolupráce se společností CROBIZ.
-  why:
-    - Proč investovat a žít v Chorvatsku
-    - "Zjistěte, proč Chorvatsko přitahuje české občany a investory: euro, členství v EU, stabilní trh, silný turismus a vysoká kvalita života."
-  faq:
-    - "Chorvatsko pro Čechy: časté otázky"
-    - Odpovědi na časté otázky Čechů o koupi nemovitosti, založení firmy, dokumentech, vyřízení na dálku a životě v Chorvatsku.
-  blog:
-    - "Chorvatsko: nemovitosti, podnikání a život"
-    - Praktické články pro Čechy o koupi nemovitosti, podnikání, administrativě, turismu, pojištění a každodenním životě v Chorvatsku.
-  contact:
-    - Konzultace pro vaše plány v Chorvatsku
-    - Kontaktujte CROBIZ v češtině nebo chorvatštině. Probereme váš plán v Chorvatsku a navrhneme jasný další krok a vhodné odborníky.
+about:
+  eyebrow: O CROBIZ
+  title: Specializované poradenství mezi Českem a Chorvatskem.
+  lead: CROBIZ je specializovaná poradenská společnost poskytující podporu českým občanům, podnikatelům a investorům v Chorvatsku.
+  storyTitle: O společnosti CROBIZ
+  story: Zakladatelkou CROBIZ je Ivana Pisac, která díky výborné znalosti chorvatského a českého jazyka i podnikatelského prostředí obou zemí pomáhá klientům koordinovat administrativní a obchodní procesy.
+  values:
+    - - Dva jazyky, jedno porozumění
+      - Plynulá komunikace v češtině a chorvatštině bez zbytečných nedorozumění.
+    - - Individuální přístup
+      - Řešení přizpůsobené vašemu cíli, rozpočtu a časovým možnostem.
+    - - Profesionální koordinace
+      - Přehledné kroky, průběžné informace a odpovědnost za komunikaci.
+    - - Dlouhodobé vztahy
+      - Nejde nám o jednorázovou službu, ale o partnerství založené na důvěře.
+  networkTitle: Síť prověřených partnerů po celém Chorvatsku
+blog:
+  eyebrow: Průvodce Chorvatskem
+  title: Praktické informace pro chytrá rozhodnutí.
+  lead: Srozumitelné články o nemovitostech, podnikání, administrativě a životě v Chorvatsku.
+contact:
+  eyebrow: Kontakt
+  title: Promluvme si o vašem plánu.
+  lead: Popište nám stručně svou situaci. Ozveme se, upřesníme potřeby a navrhneme nejlepší další krok.
+  hours: Pondělí–pátek · 9:00–17:00
+  response: Odpovídáme zpravidla do jednoho pracovního dne.
+faq:
+  eyebrow: Časté otázky
+  title: Odpovědi, které vám pomohou začít.
+  lead: Každý případ je jiný, ale tyto odpovědi vám poskytnou základní orientaci.
+  items:
+    - - Jak koupit nemovitost v Chorvatsku?
+      - Proces začíná definováním rozpočtu a požadavků, pokračuje prověřením nemovitosti a dokumentace a končí smlouvou, platbou a zápisem vlastnictví. CROBIZ koordinuje komunikaci a propojí vás s příslušným advokátem nebo notářem.
+    - - Jak založit firmu?
+      - Podle vašich cílů se zvolí vhodná právní forma, připraví dokumentace, provede registrace a otevře účet. Pomůžeme vám zorganizovat kroky a najít účetního.
+    - - Jak dlouho proces trvá?
+      - Doba závisí na typu služby, připravenosti dokumentace a institucích. Po úvodní konzultaci vám dáme realistický časový rámec.
+    - - Lze vše vyřídit na dálku?
+      - Mnoho kroků lze řešit online nebo prostřednictvím plné moci. Upozorníme vás, pokud je osobní přítomnost nutná nebo výhodná.
+    - - V jakém jazyce komunikujete?
+      - Komunikujeme česky, chorvatsky a anglicky. S odborníky a institucemi koordinujeme komunikaci tak, abyste vždy rozuměli dalšímu kroku.
+    - - Pracujete v celém Chorvatsku?
+      - Ano. Díky síti partnerů pomáháme klientům v různých částech Chorvatska, vždy podle konkrétního projektu a dostupnosti odborníků.
 home:
   eyebrow: Česko × Chorvatsko
   title: Váš spolehlivý partner pro podnikání, investice a život v Chorvatsku.
@@ -57,26 +74,11 @@ home:
     - - "04"
       - Dlouhodobá podpora
       - Zůstáváme vaším partnerem i po dokončení.
-about:
-  eyebrow: O CROBIZ
-  title: Specializované poradenství mezi Českem a Chorvatskem.
-  lead: CROBIZ je specializovaná poradenská společnost poskytující podporu českým občanům, podnikatelům a investorům v Chorvatsku.
-  storyTitle: O společnosti CROBIZ
-  story: Zakladatelkou CROBIZ je Ivana Pisac, která díky výborné znalosti chorvatského a českého jazyka i podnikatelského prostředí obou zemí pomáhá klientům koordinovat administrativní a obchodní procesy.
-  values:
-    - - Dva jazyky, jedno porozumění
-      - Plynulá komunikace v češtině a chorvatštině bez zbytečných nedorozumění.
-    - - Individuální přístup
-      - Řešení přizpůsobené vašemu cíli, rozpočtu a časovým možnostem.
-    - - Profesionální koordinace
-      - Přehledné kroky, průběžné informace a odpovědnost za komunikaci.
-    - - Dlouhodobé vztahy
-      - Nejde nám o jednorázovou službu, ale o partnerství založené na důvěře.
-  networkTitle: Síť prověřených partnerů po celém Chorvatsku
 how:
   eyebrow: Jak spolupracujeme
   title: Jasný postup od první konzultace po dlouhodobou podporu.
   lead: Každou spolupráci stavíme na srozumitelných krocích, pravidelné komunikaci a koordinaci správných odborníků.
+locale: cs
 services:
   eyebrow: Služby
   title: Komplexní podpora pro vaše plány v Chorvatsku.
@@ -153,30 +155,3 @@ why:
     - Turistické ubytování
     - Služby a obchod
     - Lokální partnerství
-faq:
-  eyebrow: Časté otázky
-  title: Odpovědi, které vám pomohou začít.
-  lead: Každý případ je jiný, ale tyto odpovědi vám poskytnou základní orientaci.
-  items:
-    - - Jak koupit nemovitost v Chorvatsku?
-      - Proces začíná definováním rozpočtu a požadavků, pokračuje prověřením nemovitosti a dokumentace a končí smlouvou, platbou a zápisem vlastnictví. CROBIZ koordinuje komunikaci a propojí vás s příslušným advokátem nebo notářem.
-    - - Jak založit firmu?
-      - Podle vašich cílů se zvolí vhodná právní forma, připraví dokumentace, provede registrace a otevře účet. Pomůžeme vám zorganizovat kroky a najít účetního.
-    - - Jak dlouho proces trvá?
-      - Doba závisí na typu služby, připravenosti dokumentace a institucích. Po úvodní konzultaci vám dáme realistický časový rámec.
-    - - Lze vše vyřídit na dálku?
-      - Mnoho kroků lze řešit online nebo prostřednictvím plné moci. Upozorníme vás, pokud je osobní přítomnost nutná nebo výhodná.
-    - - V jakém jazyce komunikujete?
-      - Komunikujeme česky, chorvatsky a anglicky. S odborníky a institucemi koordinujeme komunikaci tak, abyste vždy rozuměli dalšímu kroku.
-    - - Pracujete v celém Chorvatsku?
-      - Ano. Díky síti partnerů pomáháme klientům v různých částech Chorvatska, vždy podle konkrétního projektu a dostupnosti odborníků.
-contact:
-  eyebrow: Kontakt
-  title: Promluvme si o vašem plánu.
-  lead: Popište nám stručně svou situaci. Ozveme se, upřesníme potřeby a navrhneme nejlepší další krok.
-  hours: Pondělí–pátek · 9:00–17:00
-  response: Odpovídáme zpravidla do jednoho pracovního dne.
-blog:
-  eyebrow: Průvodce Chorvatskem
-  title: Praktické informace pro chytrá rozhodnutí.
-  lead: Srozumitelné články o nemovitostech, podnikání, administrativě a životě v Chorvatsku.

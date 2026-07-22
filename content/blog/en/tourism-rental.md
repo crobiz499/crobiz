@@ -1,16 +1,16 @@
 ---
-translationKey: tourism-rental
-locale: en
-slug: tourism-rental
 title: Tourism rentals and apartment categorisation
 category: Tourism
-summary: Preparing your property and administration for legal rentals.
 cover: /images/ai/tourism-rental.png
-publishedAt: 2026-06-26
-draft: false
-seoTitle: Tourism rentals and apartment categorisation
-seoDescription: Preparing your property and administration for legal rentals.
 ctaText: CROBIZ helps create a clear plan, introduces trusted partners and coordinates communication throughout the process.
+published: true
+publishedAt: 2026-06-26
+seoDescription: Preparing your property and administration for legal rentals.
+seoTitle: Tourism rentals and apartment categorisation
+slug: tourism-rental
+summary: Preparing your property and administration for legal rentals.
+translationKey: tourism-rental
+locale: en
 ---
 
 ## A good decision starts with the right information.

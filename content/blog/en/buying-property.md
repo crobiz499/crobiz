@@ -1,16 +1,16 @@
 ---
-translationKey: property-purchase
-locale: en
-slug: buying-property
 title: "Buying property in Croatia: first steps"
 category: Property
-summary: What to clarify before searching and how a safe purchase process works.
 cover: /images/ai/croatia-property.png
-publishedAt: 2026-07-17
-draft: false
-seoTitle: "Buying property in Croatia: first steps"
-seoDescription: What to clarify before searching and how a safe purchase process works.
 ctaText: CROBIZ helps create a clear plan, introduces trusted partners and coordinates communication throughout the process.
+published: true
+publishedAt: 2026-07-17
+seoDescription: What to clarify before searching and how a safe purchase process works.
+seoTitle: "Buying property in Croatia: first steps"
+slug: buying-property
+summary: What to clarify before searching and how a safe purchase process works.
+translationKey: property-purchase
+locale: en
 ---
 
 ## A good decision starts with the right information.

@@ -20,7 +20,7 @@ const latestPosts = computed(() => {
       slug: post.slug || String(post.path || '').split('/').pop(),
     }))
     .filter((post) => {
-      const folderLocale = String(post.path || post.id).match(/\/(cs|hr|en)\//)?.[1]
+      const folderLocale = String(post.path || post.id).match(/\/(cs|sk|hr|en)\//)?.[1]
       return folderLocale === locale.value
         && (post.published === true || (post.published == null && post.draft === false))
         && post.slug
@@ -47,7 +47,7 @@ const latestPosts = computed(() => {
 
     <div class="category-grid container"><article v-for="(item,index) in site.home.categories" :key="item[0]" class="category-card"><div class="category-icon">0{{ index+1 }}</div><h2>{{ item[0] }}</h2><p>{{ item[1] }}</p></article></div>
 
-    <section class="section"><div class="container grid-2"><div class="about-preview__visual"><ImagePlaceholder :label="t('common.photoMeeting')" :src="images.meeting" tall/><ImagePlaceholder :label="t('common.photoPortrait')" :src="images.portrait" portrait/></div><div><p class="eyebrow">CROBIZ</p><h2 class="section-title">{{ site.home.introTitle }}</h2><p class="section-copy">{{ site.home.introText }}</p><div class="feature-list"><div v-for="(item,index) in site.about.values.slice(0,3)" :key="item[0]" class="feature-item"><span>0{{ index+1 }}</span><div><h3>{{ item[0] }}</h3><p>{{ item[1] }}</p></div></div></div><div class="button-row"><NuxtLink class="button button--outline" :to="localePath('/about')">{{ t('actions.discover') }}</NuxtLink></div></div></div></section>
+    <section class="section"><div class="container grid-2"><div class="about-preview__visual"><ImagePlaceholder :label="t('common.photoMeeting')" :src="images.meeting" tall/><ImagePlaceholder :label="t('common.photoPortrait')" :src="images.portrait" portrait/></div><div><p class="eyebrow">CROBIZ</p><h2 class="section-title">{{ site.home.introTitle }}</h2><p class="section-copy">{{ site.home.introText }}</p><div class="feature-list"><div v-for="(item,index) in site.about.values.slice(0,3)" :key="item[0]" class="feature-item"><span>0{{ index+1 }}</span><div><h3>{{ item[0] }}</h3><p>{{ item[1] }}</p></div></div></div><div class="button-row"><NuxtLink class="button button--primary" :to="localePath('/about')">{{ t('actions.discover') }}</NuxtLink></div></div></div></section>
 
     <section class="section surface-sand"><div class="container"><SectionHeading eyebrow="CROBIZ" :title="site.home.servicesTitle" :text="site.services.lead"/><div class="service-preview-grid"><article v-for="(service,index) in services" :key="service[0]" class="service-preview"><div class="service-icon">{{ index+1 }}</div><h3>{{ service[0] }}</h3><p>{{ service[1].slice(0,2).join(' · ') }}</p><NuxtLink class="text-link" :to="localePath('/services')">{{ t('common.learnMore') }} <span>→</span></NuxtLink></article></div></div></section>
 

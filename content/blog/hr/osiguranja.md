@@ -1,16 +1,16 @@
 ---
-translationKey: insurance
-locale: hr
-slug: osiguranja
 title: Koja osiguranja trebate u Hrvatskoj?
 category: Osiguranja
-summary: Pregled osiguranja nekretnina, vozila, zdravlja i poslovanja.
 cover: /images/ai/insurance-admin.png
-publishedAt: 2026-06-19
-draft: false
-seoTitle: Koja osiguranja trebate u Hrvatskoj?
-seoDescription: Pregled osiguranja nekretnina, vozila, zdravlja i poslovanja.
 ctaText: CROBIZ pomaže izraditi jasan plan, povezuje vas s provjerenim partnerima i koordinira komunikaciju tijekom cijelog procesa.
+published: true
+publishedAt: 2026-06-19
+seoDescription: Pregled osiguranja nekretnina, vozila, zdravlja i poslovanja.
+seoTitle: Koja osiguranja trebate u Hrvatskoj?
+slug: osiguranja
+summary: Pregled osiguranja nekretnina, vozila, zdravlja i poslovanja.
+translationKey: insurance
+locale: hr
 ---
 
 ## Dobra odluka počinje pravim informacijama.

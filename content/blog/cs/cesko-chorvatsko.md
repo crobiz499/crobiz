@@ -1,16 +1,16 @@
 ---
-translationKey: czech-croatian-business
-locale: cs
-slug: cesko-chorvatsko
 title: Podnikání mezi Českem a Chorvatskem
 category: Spolupráce
-summary: Kde vznikají příležitosti a proč je místní partner klíčový.
 cover: /images/ai/cross-border-partnership.png
-publishedAt: 2026-06-12
-draft: false
-seoTitle: Podnikání mezi Českem a Chorvatskem
-seoDescription: Kde vznikají příležitosti a proč je místní partner klíčový.
 ctaText: CROBIZ vám pomůže vytvořit jasný plán, propojí vás s prověřenými partnery a koordinuje komunikaci po celou dobu.
+published: true
+publishedAt: 2026-06-12
+seoDescription: Kde vznikají příležitosti a proč je místní partner klíčový.
+seoTitle: Podnikání mezi Českem a Chorvatskem
+slug: cesko-chorvatsko
+summary: Kde vznikají příležitosti a proč je místní partner klíčový.
+translationKey: czech-croatian-business
+locale: cs
 ---
 
 ## Dobré rozhodnutí začíná správnými informacemi.

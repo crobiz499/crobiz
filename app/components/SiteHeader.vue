@@ -9,9 +9,10 @@ const languagePicker = ref(null)
 const scrolled = ref(false)
 
 const languageOptions = [
+  { code:'cs', name:'Čeština' },
+  { code:'sk', name:'Slovenčina' },
   { code:'hr', name:'Hrvatski' },
   { code:'en', name:'English' },
-  { code:'cs', name:'Čeština' },
 ]
 const activeLanguage = computed(() => languageOptions.find((item) => item.code === locale.value) || languageOptions[0])
 

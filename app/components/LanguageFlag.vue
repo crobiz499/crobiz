@@ -30,6 +30,14 @@ defineProps({ code: { type:String, required:true } })
     <path d="M15 0v20M0 10h30" stroke="#fff" stroke-width="6"/>
     <path d="M15 0v20M0 10h30" stroke="#c8102e" stroke-width="3.2"/>
   </svg>
+  <svg v-else-if="code === 'sk'" class="language-flag" viewBox="0 0 30 20" role="img" aria-label="Slovakia">
+    <rect width="30" height="20" rx="2" fill="#fff"/>
+    <path d="M0 6.67h30v6.66H0z" fill="#0b4ea2"/>
+    <path d="M0 13.33h30V20H0z" fill="#ee1c25"/>
+    <path d="M7.1 6.2h7.8v5.4c0 2.5-1.65 4.05-3.9 4.95-2.25-.9-3.9-2.45-3.9-4.95Z" fill="#ee1c25" stroke="#fff" stroke-width=".75" stroke-linejoin="round"/>
+    <path d="M11 7.2v5.35m-2.15-3.6h4.3m-3.55 1.8h2.8" stroke="#fff" stroke-width=".8" stroke-linecap="round"/>
+    <path d="M8.2 13.05c.8-.8 1.55-.7 2.3.05.75-1.05 1.6-1.05 2.45-.05.55-.55 1.1-.65 1.65-.25-.45 1.65-1.75 2.85-3.6 3.6-1.85-.75-3.15-1.95-3.6-3.6.27-.12.53-.04.8.25Z" fill="#0b4ea2"/>
+  </svg>
   <svg v-else class="language-flag" viewBox="0 0 30 20" role="img" aria-label="Czech Republic">
     <rect width="30" height="20" rx="2" fill="#fff"/>
     <path d="M0 10h30v10H0z" fill="#d7141a"/>

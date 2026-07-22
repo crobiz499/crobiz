@@ -13,6 +13,9 @@ node_modules
 logs
 *.log
 
+# Local rollback archives
+backups/*.zip
+
 # Misc
 .DS_Store
 .fleet

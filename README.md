@@ -40,7 +40,7 @@ Without a Formspree ID, the contact form falls back to opening the visitor's ema
 
 ## Production editor setup
 
-Nuxt Studio is configured for the private `Marko496/crobiz` GitHub repository and the `main` branch.
+Nuxt Studio is configured for the private `crobiz499/crobiz` GitHub repository and the `main` branch.
 
 Before giving the editor to the client:
 

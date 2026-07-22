@@ -1,0 +1,157 @@
+about:
+  eyebrow: O CROBIZ
+  title: Špecializované poradenstvo medzi Slovenskom a Chorvátskom.
+  lead: CROBIZ je špecializovaná poradenská spoločnosť poskytujúca podporu slovenským občanom, podnikateľom a investorom v Chorvátsku.
+  storyTitle: O spoločnosti CROBIZ
+  story: Zakladateľkou CROBIZ je Ivana Pisac, ktorá vďaka výbornej znalosti chorvátskeho a českého jazyka, blízkosti slovenského prostredia a znalosti podnikateľského prostredia pomáha klientom koordinovať administratívne a obchodné procesy.
+  values:
+    - - Obsah pre slovenských klientov
+      - Zrozumiteľné informácie v slovenčine a koordinácia v chorvátskom prostredí.
+    - - Individuálny prístup
+      - Riešenie prispôsobené vášmu cieľu, rozpočtu a časovým možnostiam.
+    - - Profesionálna koordinácia
+      - Prehľadné kroky, priebežné informácie a zodpovednosť za komunikáciu.
+    - - Dlhodobé vzťahy
+      - Nejde nám o jednorazovú službu, ale o partnerstvo založené na dôvere.
+  networkTitle: Sieť overených partnerov po celom Chorvátsku
+blog:
+  eyebrow: Sprievodca Chorvátskom
+  title: Praktické informácie pre rozumné rozhodnutia.
+  lead: Zrozumiteľné články o nehnuteľnostiach, podnikaní, administratíve a živote v Chorvátsku.
+contact:
+  eyebrow: Kontakt
+  title: Porozprávajme sa o vašom pláne.
+  lead: Stručne nám opíšte svoju situáciu. Ozveme sa vám, upresníme potreby a navrhneme najlepší ďalší krok.
+  hours: Pondelok–piatok · 9:00–17:00
+  response: Zvyčajne odpovedáme do jedného pracovného dňa.
+faq:
+  eyebrow: Časté otázky
+  title: Odpovede, ktoré vám pomôžu začať.
+  lead: Každý prípad je iný, no tieto odpovede vám poskytnú základnú orientáciu.
+  items:
+    - - Ako kúpiť nehnuteľnosť v Chorvátsku?
+      - Proces sa začína určením rozpočtu a požiadaviek, pokračuje preverovaním nehnuteľnosti a dokumentácie a končí zmluvou, platbou a zápisom vlastníctva. CROBIZ koordinuje komunikáciu a spojí vás s príslušným advokátom alebo notárom.
+    - - Ako založiť firmu?
+      - Podľa vašich cieľov sa zvolí vhodná právna forma, pripraví dokumentácia, vykoná registrácia a otvorí účet. Pomôžeme vám zorganizovať jednotlivé kroky a nájsť účtovníka.
+    - - Ako dlho proces trvá?
+      - Trvanie závisí od typu služby, pripravenosti dokumentácie a príslušných inštitúcií. Po úvodnej konzultácii vám dáme realistický časový rámec.
+    - - Dá sa všetko vybaviť na diaľku?
+      - Mnohé kroky možno riešiť online alebo prostredníctvom plnej moci. Upozorníme vás, ak je osobná prítomnosť nevyhnutná alebo výhodná.
+    - - V akom jazyku komunikujete?
+      - Webový obsah je dostupný v slovenčine. Priama komunikácia prebieha v češtine, chorvátčine a angličtine a s odborníkmi a inštitúciami ju koordinujeme tak, aby ste vždy rozumeli ďalšiemu kroku.
+    - - Pracujete v celom Chorvátsku?
+      - Áno. Vďaka sieti partnerov pomáhame klientom v rôznych častiach Chorvátska, vždy podľa konkrétneho projektu a dostupnosti odborníkov.
+home:
+  eyebrow: Slovensko × Chorvátsko
+  title: Váš spoľahlivý partner pre podnikanie, investície a život v Chorvátsku.
+  lead: Pomáhame slovenským občanom, podnikateľom a investorom jednoduchšie uskutočniť ich plány v Chorvátsku. Spojíme vás s overenými odborníkmi a prevedieme vás celým procesom.
+  trust: Osobný prístup · miestna znalosť · overení partneri
+  categories:
+    - - Nehnuteľnosti
+      - Podpora pri kúpe a koordinácia dokumentácie.
+    - - Podnikanie
+      - Praktická pomoc pri vstupe na chorvátsky trh.
+    - - Administratíva
+      - Istota v postupoch, formulároch a komunikácii.
+    - - Overení partneri
+      - Sieť odborníkov pre každý krok vášho projektu.
+  introTitle: Menej neistoty. Viac jasných krokov.
+  introText: CROBIZ spája znalosť českého a chorvátskeho prostredia s osobným vedením pre slovenských klientov. Získate jeden spoľahlivý kontaktný bod, zrozumiteľnú komunikáciu a koordináciu ľudí, ktorých váš zámer skutočne potrebuje.
+  servicesTitle: Podpora presne tam, kde ju potrebujete
+  whyTitle: Prečo práve Chorvátsko?
+  whyText: Bezpečná európska krajina s eurom, stabilným trhom, silným turizmom a výnimočnou kvalitou života.
+  processTitle: Od prvej otázky k hotovému riešeniu
+  process:
+    - - "01"
+      - Úvodná konzultácia
+      - Spoznáme váš cieľ, situáciu a priority.
+    - - "02"
+      - Jasný plán
+      - Navrhneme kroky, dokumentáciu a správnych odborníkov.
+    - - "03"
+      - Koordinácia
+      - Prepojíme všetky strany a dohliadneme na priebeh.
+    - - "04"
+      - Dlhodobá podpora
+      - Zostávame vaším partnerom aj po dokončení.
+how:
+  eyebrow: Ako spolupracujeme
+  title: Jasný postup od prvej konzultácie až po dlhodobú podporu.
+  lead: Každú spoluprácu staviame na zrozumiteľných krokoch, pravidelnej komunikácii a koordinácii správnych odborníkov.
+locale: sk
+services:
+  eyebrow: Služby
+  title: Komplexná podpora pre vaše plány v Chorvátsku.
+  lead: Od prvého prieskumu až po koordináciu konkrétneho procesu. Vyberieme správny postup a spojíme vás s potrebnými odborníkmi.
+  groups:
+    - - Podnikanie v Chorvátsku
+      - - Informácie o podnikateľskom prostredí
+        - Pomoc so založením spoločnosti alebo živnosti
+        - Administratívna podpora
+        - Prepojenie s účtovnými službami
+        - Pomoc pri otvorení podnikateľského účtu
+    - - Nehnuteľnosti
+      - - Podpora pri kúpe nehnuteľnosti
+        - Kontrola a koordinácia procesu
+        - Pomoc s dokumentáciou
+        - Komunikácia s účastníkmi transakcie
+    - - Administratívna podpora
+      - - Komunikácia s inštitúciami
+        - Pomoc s dokumentáciou a formulármi
+        - Koordinácia postupov
+        - Priebežné vysvetľovanie ďalších krokov
+    - - Právne a účtovné sprostredkovanie
+      - - Prepojenie s advokátmi a notármi
+        - Prepojenie s účtovníkmi a daňovými poradcami
+        - Koordinácia komunikácie počas procesu
+    - - Poistenie
+      - - Poistenie nehnuteľností
+        - Poistenie vozidiel a cestovné poistenie
+        - Zdravotné a podnikateľské poistenie
+    - - Turizmus
+      - - Pomoc s kategorizáciou apartmánov
+        - Administratívna podpora
+        - Pomoc pri začatí turistickej činnosti
+    - - Preklady a komunikácia
+      - - Chorvátčina–čeština a čeština–chorvátčina
+        - Obchodná komunikácia
+        - Podpora pri rokovaniach s inštitúciami
+  disclaimerTitle: Dôležité upozornenie
+  disclaimer: CROBIZ neposkytuje právne ani účtovné služby. Klientov prepája s overenými advokátmi, notármi, účtovníkmi a ďalšími odborníkmi a koordinuje vzájomnú komunikáciu.
+  partners:
+    - Advokáti
+    - Notári
+    - Účtovníci
+    - Daňoví poradcovia
+    - Architekti
+    - Projektanti
+    - Geodeti
+    - Stavebné firmy
+    - Realitní makléri
+    - Poisťovne
+    - Súdni tlmočníci
+why:
+  eyebrow: Prečo Chorvátsko
+  title: Stabilné európske prostredie s výnimočným potenciálom.
+  lead: Chorvátsko spája bezpečie Európskej únie, euro, silnú turistickú ekonomiku a životný štýl, ktorý dlhodobo priťahuje slovenských občanov aj investorov.
+  reasons:
+    - - Člen Európskej únie
+      - Spoločný právny a ekonomický rámec uľahčuje pohyb osôb, kapitálu aj podnikanie.
+    - - Euro ako mena
+      - Jednoduchšie platby, plánovanie investícií a menšie kurzové riziko.
+    - - Stabilný trh
+      - Predvídateľné prostredie a rastúci záujem zahraničných investorov.
+    - - Atraktívne investície
+      - Príležitosti v nehnuteľnostiach, turizme, službách a miestnom podnikaní.
+    - - Rozvinutý turizmus
+      - Silný medzinárodný dopyt a dlhodobá známosť destinácie.
+    - - Výborná dostupnosť
+      - Cestné aj letecké spojenie so Slovenskou republikou počas celého roka.
+    - - Kvalita života
+      - Bezpečie, príroda, klíma, gastronómia a blízkosť mora.
+  sectorsTitle: Príležitosti, ktoré dávajú zmysel
+  sectors:
+    - Rezidenčné nehnuteľnosti
+    - Turistické ubytovanie
+    - Služby a obchod
+    - Miestne partnerstvá

@@ -1,16 +1,16 @@
 ---
-translationKey: tourism-rental
-locale: hr
-slug: turisticki-najam
 title: Turistički najam i kategorizacija apartmana
 category: Turizam
-summary: Kako pripremiti nekretninu i administraciju za legalan najam.
 cover: /images/ai/tourism-rental.png
-publishedAt: 2026-06-26
-draft: false
-seoTitle: Turistički najam i kategorizacija apartmana
-seoDescription: Kako pripremiti nekretninu i administraciju za legalan najam.
 ctaText: CROBIZ pomaže izraditi jasan plan, povezuje vas s provjerenim partnerima i koordinira komunikaciju tijekom cijelog procesa.
+published: true
+publishedAt: 2026-06-26
+seoDescription: Kako pripremiti nekretninu i administraciju za legalan najam.
+seoTitle: Turistički najam i kategorizacija apartmana
+slug: turisticki-najam
+summary: Kako pripremiti nekretninu i administraciju za legalan najam.
+translationKey: tourism-rental
+locale: hr
 ---
 
 ## Dobra odluka počinje pravim informacijama.

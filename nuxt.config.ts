@@ -11,7 +11,7 @@ export default defineNuxtConfig({
     route: '/_studio',
     repository: {
       provider: 'github',
-      owner: 'Marko496',
+      owner: 'crobiz499',
       repo: 'crobiz',
       branch: 'main',
       private: true,
@@ -44,6 +44,7 @@ export default defineNuxtConfig({
     baseUrl: 'https://www.crobiz.cz',
     locales: [
       { code: 'cs', name: 'Čeština', language: 'cs-CZ', file: 'cs.json' },
+      { code: 'sk', name: 'Slovenčina', language: 'sk-SK', file: 'sk.json' },
       { code: 'hr', name: 'Hrvatski', language: 'hr-HR', file: 'hr.json' },
       { code: 'en', name: 'English', language: 'en-GB', file: 'en.json' },
     ],

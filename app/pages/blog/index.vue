@@ -18,7 +18,7 @@ const posts = computed(() => {
       slug: post.slug || String(post.path || '').split('/').pop(),
     }))
     .filter((post) => {
-      const folderLocale = String(post.path || post.id).match(/\/(cs|hr|en)\//)?.[1]
+      const folderLocale = String(post.path || post.id).match(/\/(cs|sk|hr|en)\//)?.[1]
       return folderLocale === locale.value
         && (post.published === true || (post.published == null && post.draft === false))
         && post.slug
@@ -39,6 +39,7 @@ const paginatedPosts = computed(() => {
 })
 const paginationText = computed(() => ({
   cs: { label: 'Stránkování blogu', previous: 'Předchozí', next: 'Další' },
+  sk: { label: 'Stránkovanie blogu', previous: 'Predchádzajúca', next: 'Ďalšia' },
   hr: { label: 'Stranice bloga', previous: 'Prethodna', next: 'Sljedeća' },
   en: { label: 'Blog pagination', previous: 'Previous', next: 'Next' },
 })[locale.value] || { label: 'Blog pagination', previous: 'Previous', next: 'Next' })

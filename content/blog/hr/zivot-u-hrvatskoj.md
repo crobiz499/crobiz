@@ -1,16 +1,16 @@
 ---
-translationKey: living-in-croatia
-locale: hr
-slug: zivot-u-hrvatskoj
 title: "Život u Hrvatskoj: praktični vodič"
 category: Život
-summary: Od boravka i zdravstva do svakodnevne administracije.
 cover: /images/ai/croatia-lifestyle.png
-publishedAt: 2026-07-03
-draft: false
-seoTitle: "Život u Hrvatskoj: praktični vodič"
-seoDescription: Od boravka i zdravstva do svakodnevne administracije.
 ctaText: CROBIZ pomaže izraditi jasan plan, povezuje vas s provjerenim partnerima i koordinira komunikaciju tijekom cijelog procesa.
+published: true
+publishedAt: 2026-07-03
+seoDescription: Od boravka i zdravstva do svakodnevne administracije.
+seoTitle: "Život u Hrvatskoj: praktični vodič"
+slug: zivot-u-hrvatskoj
+summary: Od boravka i zdravstva do svakodnevne administracije.
+translationKey: living-in-croatia
+locale: hr
 ---
 
 ## Dobra odluka počinje pravim informacijama.

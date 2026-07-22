@@ -1,16 +1,16 @@
 ---
-translationKey: living-in-croatia
-locale: en
-slug: living-croatia
 title: "Living in Croatia: a practical guide"
 category: Lifestyle
-summary: From residence and healthcare to everyday administration.
 cover: /images/ai/croatia-lifestyle.png
-publishedAt: 2026-07-03
-draft: false
-seoTitle: "Living in Croatia: a practical guide"
-seoDescription: From residence and healthcare to everyday administration.
 ctaText: CROBIZ helps create a clear plan, introduces trusted partners and coordinates communication throughout the process.
+published: true
+publishedAt: 2026-07-03
+seoDescription: From residence and healthcare to everyday administration.
+seoTitle: "Living in Croatia: a practical guide"
+slug: living-croatia
+summary: From residence and healthcare to everyday administration.
+translationKey: living-in-croatia
+locale: en
 ---
 
 ## A good decision starts with the right information.

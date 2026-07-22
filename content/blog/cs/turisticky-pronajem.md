@@ -1,16 +1,16 @@
 ---
-translationKey: tourism-rental
-locale: cs
-slug: turisticky-pronajem
 title: Turistický pronájem a kategorizace apartmánu
 category: Turismus
-summary: Jak připravit nemovitost a administrativu pro legální pronájem.
 cover: /images/ai/tourism-rental.png
-publishedAt: 2026-06-26
-draft: false
-seoTitle: Turistický pronájem a kategorizace apartmánu
-seoDescription: Jak připravit nemovitost a administrativu pro legální pronájem.
 ctaText: CROBIZ vám pomůže vytvořit jasný plán, propojí vás s prověřenými partnery a koordinuje komunikaci po celou dobu.
+published: true
+publishedAt: 2026-06-26
+seoDescription: Jak připravit nemovitost a administrativu pro legální pronájem.
+seoTitle: Turistický pronájem a kategorizace apartmánu
+slug: turisticky-pronajem
+summary: Jak připravit nemovitost a administrativu pro legální pronájem.
+translationKey: tourism-rental
+locale: cs
 ---
 
 ## Dobré rozhodnutí začíná správnými informacemi.

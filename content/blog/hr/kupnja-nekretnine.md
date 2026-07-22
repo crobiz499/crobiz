@@ -1,16 +1,16 @@
 ---
-translationKey: property-purchase
-locale: hr
-slug: kupnja-nekretnine
 title: "Kupnja nekretnine u Hrvatskoj: prvi koraci"
 category: Nekretnine
-summary: Što razjasniti prije pretrage i kako izgleda siguran proces kupnje.
 cover: /images/ai/croatia-property.png
-publishedAt: 2026-07-17
-draft: false
-seoTitle: "Kupnja nekretnine u Hrvatskoj: prvi koraci"
-seoDescription: Što razjasniti prije pretrage i kako izgleda siguran proces kupnje.
 ctaText: CROBIZ pomaže izraditi jasan plan, povezuje vas s provjerenim partnerima i koordinira komunikaciju tijekom cijelog procesa.
+published: true
+publishedAt: 2026-07-17
+seoDescription: Što razjasniti prije pretrage i kako izgleda siguran proces kupnje.
+seoTitle: "Kupnja nekretnine u Hrvatskoj: prvi koraci"
+slug: kupnja-nekretnine
+summary: Što razjasniti prije pretrage i kako izgleda siguran proces kupnje.
+translationKey: property-purchase
+locale: hr
 ---
 
 ## Dobra odluka počinje pravim informacijama.

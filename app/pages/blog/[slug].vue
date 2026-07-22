@@ -7,7 +7,7 @@ const setI18nParams = useSetI18nParams()
 const articleQueryKey = computed(() => `crobiz-article-${locale.value}-${route.params.slug}`)
 const { data: post } = await useAsyncData(articleQueryKey, () => {
   return queryCollection('blog').all().then((documents) => documents.find((document) => {
-    const folderLocale = String(document.path || document.id).match(/\/(cs|hr|en)\//)?.[1]
+    const folderLocale = String(document.path || document.id).match(/\/(cs|sk|hr|en)\//)?.[1]
     const fileSlug = String(document.path || '').split('/').pop()
     const isPublished = document.published === true
       || (document.published == null && document.draft === false)
@@ -36,14 +36,14 @@ const { data: translations } = await useAsyncData(translationQueryKey, () => {
 
 setI18nParams(
   Object.fromEntries((translations.value || []).map((translation) => [
-    String(translation.path || translation.id).match(/\/(cs|hr|en)\//)?.[1],
+    String(translation.path || translation.id).match(/\/(cs|sk|hr|en)\//)?.[1],
     { slug: translation.slug },
   ])),
 )
 
 const formattedDate = computed(() => {
   if (!post.value.publishedAt) return ''
-  const language = locale.value === 'cs' ? 'cs-CZ' : locale.value === 'hr' ? 'hr-HR' : 'en-GB'
+  const language = { cs:'cs-CZ', sk:'sk-SK', hr:'hr-HR', en:'en-GB' }[locale.value] || 'cs-CZ'
   return new Intl.DateTimeFormat(language, {
     day: 'numeric',
     month: 'long',
@@ -64,7 +64,7 @@ useCustomPageSeo({
     description: post.value.summary,
     image: `https://www.crobiz.cz${post.value.cover}`,
     datePublished: post.value.publishedAt,
-    inLanguage: locale.value === 'cs' ? 'cs-CZ' : locale.value === 'hr' ? 'hr-HR' : 'en-GB',
+    inLanguage: { cs:'cs-CZ', sk:'sk-SK', hr:'hr-HR', en:'en-GB' }[locale.value] || 'cs-CZ',
     mainEntityOfPage: { '@id': `https://www.crobiz.cz${route.path}#webpage` },
     author: { '@id': 'https://www.crobiz.cz/#organization' },
     publisher: { '@id': 'https://www.crobiz.cz/#organization' },

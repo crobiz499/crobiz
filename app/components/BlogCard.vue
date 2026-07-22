@@ -10,7 +10,7 @@ const { t, locale } = useI18n()
 const localePath = useLocalePath()
 const formattedDate = computed(() => {
   if (!props.post.publishedAt) return ''
-  const language = locale.value === 'cs' ? 'cs-CZ' : locale.value === 'hr' ? 'hr-HR' : 'en-GB'
+  const language = { cs:'cs-CZ', sk:'sk-SK', hr:'hr-HR', en:'en-GB' }[locale.value] || 'cs-CZ'
   return new Intl.DateTimeFormat(language, {
     day: 'numeric',
     month: 'long',

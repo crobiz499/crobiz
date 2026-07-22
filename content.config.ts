@@ -84,7 +84,7 @@ const faqSchema = z.object({
 })
 
 const siteSchema = z.object({
-  locale: z.enum(['cs', 'hr', 'en']),
+  locale: z.enum(['cs', 'hr', 'en', 'sk']),
   seo: seoSchema,
   home: homeSchema,
   about: aboutSchema,
@@ -113,7 +113,7 @@ const siteSchema = z.object({
 const blogSchema = z.object({
   translationKey: property(shortText.optional()).editor({
     label: 'Translation group',
-    description: 'Use the same value for matching Czech, Croatian, and English versions.',
+    description: 'Use the same value for matching Czech, Slovak, Croatian, and English versions.',
   }),
   slug: optionalSlug,
   title: shortText,

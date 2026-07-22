@@ -1,16 +1,16 @@
 ---
-translationKey: czech-croatian-business
-locale: hr
-slug: ceska-hrvatska
 title: Poslovanje između Češke i Hrvatske
 category: Suradnja
-summary: Gdje nastaju prilike i zašto je lokalni partner važan.
 cover: /images/ai/cross-border-partnership.png
-publishedAt: 2026-06-12
-draft: false
-seoTitle: Poslovanje između Češke i Hrvatske
-seoDescription: Gdje nastaju prilike i zašto je lokalni partner važan.
 ctaText: CROBIZ pomaže izraditi jasan plan, povezuje vas s provjerenim partnerima i koordinira komunikaciju tijekom cijelog procesa.
+published: true
+publishedAt: 2026-06-12
+seoDescription: Gdje nastaju prilike i zašto je lokalni partner važan.
+seoTitle: Poslovanje između Češke i Hrvatske
+slug: ceska-hrvatska
+summary: Gdje nastaju prilike i zašto je lokalni partner važan.
+translationKey: czech-croatian-business
+locale: hr
 ---
 
 ## Dobra odluka počinje pravim informacijama.

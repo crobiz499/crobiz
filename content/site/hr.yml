@@ -1,29 +1,46 @@
-locale: hr
-seo:
-  home:
-    - Poslovanje, nekretnine i život u Hrvatskoj
-    - CROBIZ pomaže češkim građanima s poslovanjem, kupnjom nekretnina, administracijom i životom u Hrvatskoj uz provjerene lokalne partnere.
-  about:
-    - "O CROBIZ-u: podrška u Hrvatskoj"
-    - CROBIZ je specijalizirana konzultantska tvrtka za češke građane, poduzetnike i investitore u Hrvatskoj, koju je osnovala Ivana Pisac.
-  services:
-    - Usluge u Hrvatskoj za češke klijente
-    - Podrška češkim građanima pri poslovanju, kupnji nekretnina, administraciji, turizmu, osiguranju i komunikaciji u Hrvatskoj.
-  how:
-    - Kako surađujemo
-    - Od uvodnih konzultacija preko jasnog plana i koordinacije do dugoročne podrške. Upoznajte način suradnje s tvrtkom CROBIZ.
-  why:
-    - Zašto ulagati i živjeti u Hrvatskoj
-    - "Saznajte zašto Hrvatska privlači češke građane i ulagače: euro, članstvo u EU, stabilno tržište, razvijen turizam i visoka kvaliteta života."
-  faq:
-    - "Hrvatska za češke građane: česta pitanja"
-    - Odgovori o kupnji nekretnine, osnivanju tvrtke, dokumentaciji, postupcima na daljinu i životu čeških građana u Hrvatskoj.
-  blog:
-    - "Hrvatska: nekretnine, poslovanje i život"
-    - Praktični članci o kupnji nekretnina, poslovanju, administraciji, turizmu, osiguranju i životu čeških građana u Hrvatskoj.
-  contact:
-    - Konzultacije za vaše planove u Hrvatskoj
-    - Kontaktirajte CROBIZ na hrvatskom ili češkom jeziku. Razmotrit ćemo vaš plan u Hrvatskoj i predložiti jasan sljedeći korak.
+about:
+  eyebrow: O CROBIZ-u
+  title: Specijalizirano savjetovanje između Češke i Hrvatske.
+  lead: CROBIZ je specijalizirana konzultantska tvrtka za podršku češkim građanima, poduzetnicima i investitorima u Hrvatskoj.
+  storyTitle: O tvrtki CROBIZ
+  story: Osnivačica CROBIZ-a je Ivana Pisac, koja zahvaljujući izvrsnom poznavanju hrvatskog i češkog jezika te poslovnog okruženja obje zemlje pomaže klijentima u koordinaciji administrativnih i poslovnih procesa.
+  values:
+    - - Dva jezika, jedno razumijevanje
+      - Tečna komunikacija na hrvatskom i češkom bez nepotrebnih nesporazuma.
+    - - Individualan pristup
+      - Rješenje prilagođeno vašem cilju, budžetu i vremenu.
+    - - Profesionalna koordinacija
+      - Pregledni koraci, redovite informacije i odgovornost za komunikaciju.
+    - - Dugoročni odnosi
+      - Ne težimo jednokratnoj usluzi, nego partnerstvu temeljenom na povjerenju.
+  networkTitle: Mreža provjerenih partnera diljem Hrvatske
+blog:
+  eyebrow: Vodič kroz Hrvatsku
+  title: Praktične informacije za pametne odluke.
+  lead: Razumljivi članci o nekretninama, poslovanju, administraciji i životu u Hrvatskoj.
+contact:
+  eyebrow: Kontakt
+  title: Razgovarajmo o vašem planu.
+  lead: Ukratko nam opišite svoju situaciju. Javit ćemo se, razjasniti potrebe i predložiti najbolji sljedeći korak.
+  hours: Ponedjeljak–petak · 9:00–17:00
+  response: U pravilu odgovaramo unutar jednog radnog dana.
+faq:
+  eyebrow: Česta pitanja
+  title: Odgovori koji vam pomažu krenuti.
+  lead: Svaki slučaj je drugačiji, ali ovi odgovori pružaju osnovnu orijentaciju.
+  items:
+    - - Kako kupiti nekretninu u Hrvatskoj?
+      - Postupak počinje definiranjem budžeta i zahtjeva, nastavlja se provjerom nekretnine i dokumentacije, a završava ugovorom, plaćanjem i upisom vlasništva. CROBIZ koordinira komunikaciju i povezuje vas s odgovarajućim stručnjakom.
+    - - Kako osnovati tvrtku?
+      - Prema vašim ciljevima odabire se pravni oblik, priprema dokumentacija, provodi registracija i otvara račun. Pomažemo organizirati korake i pronaći računovođu.
+    - - Koliko traje postupak?
+      - Trajanje ovisi o vrsti usluge, spremnosti dokumentacije i institucijama. Nakon konzultacije dajemo realan vremenski okvir.
+    - - Mogu li sve riješiti na daljinu?
+      - Mnogi se koraci mogu riješiti online ili putem punomoći. Upozorit ćemo vas kada je osobna prisutnost nužna ili korisna.
+    - - Na kojem jeziku komunicirate?
+      - Komuniciramo na hrvatskom, češkom i engleskom te koordiniramo komunikaciju sa stručnjacima i institucijama.
+    - - Radite li na području cijele Hrvatske?
+      - Da. Zahvaljujući mreži partnera pomažemo klijentima u različitim dijelovima Hrvatske, prema projektu i dostupnosti stručnjaka.
 home:
   eyebrow: Češka × Hrvatska
   title: Vaš pouzdan partner za poslovanje, ulaganje i život u Hrvatskoj.
@@ -57,26 +74,11 @@ home:
     - - "04"
       - Dugoročna podrška
       - Ostajemo vaš partner i nakon završetka.
-about:
-  eyebrow: O CROBIZ-u
-  title: Specijalizirano savjetovanje između Češke i Hrvatske.
-  lead: CROBIZ je specijalizirana konzultantska tvrtka za podršku češkim građanima, poduzetnicima i investitorima u Hrvatskoj.
-  storyTitle: O tvrtki CROBIZ
-  story: Osnivačica CROBIZ-a je Ivana Pisac, koja zahvaljujući izvrsnom poznavanju hrvatskog i češkog jezika te poslovnog okruženja obje zemlje pomaže klijentima u koordinaciji administrativnih i poslovnih procesa.
-  values:
-    - - Dva jezika, jedno razumijevanje
-      - Tečna komunikacija na hrvatskom i češkom bez nepotrebnih nesporazuma.
-    - - Individualan pristup
-      - Rješenje prilagođeno vašem cilju, budžetu i vremenu.
-    - - Profesionalna koordinacija
-      - Pregledni koraci, redovite informacije i odgovornost za komunikaciju.
-    - - Dugoročni odnosi
-      - Ne težimo jednokratnoj usluzi, nego partnerstvu temeljenom na povjerenju.
-  networkTitle: Mreža provjerenih partnera diljem Hrvatske
 how:
   eyebrow: Kako surađujemo
   title: Jasan proces od prvih konzultacija do dugoročne podrške.
   lead: Svaku suradnju gradimo na razumljivim koracima, redovitoj komunikaciji i koordinaciji odgovarajućih stručnjaka.
+locale: hr
 services:
   eyebrow: Usluge
   title: Sveobuhvatna podrška za vaše planove u Hrvatskoj.
@@ -153,30 +155,3 @@ why:
     - Turistički smještaj
     - Usluge i trgovina
     - Lokalna partnerstva
-faq:
-  eyebrow: Česta pitanja
-  title: Odgovori koji vam pomažu krenuti.
-  lead: Svaki slučaj je drugačiji, ali ovi odgovori pružaju osnovnu orijentaciju.
-  items:
-    - - Kako kupiti nekretninu u Hrvatskoj?
-      - Postupak počinje definiranjem budžeta i zahtjeva, nastavlja se provjerom nekretnine i dokumentacije, a završava ugovorom, plaćanjem i upisom vlasništva. CROBIZ koordinira komunikaciju i povezuje vas s odgovarajućim stručnjakom.
-    - - Kako osnovati tvrtku?
-      - Prema vašim ciljevima odabire se pravni oblik, priprema dokumentacija, provodi registracija i otvara račun. Pomažemo organizirati korake i pronaći računovođu.
-    - - Koliko traje postupak?
-      - Trajanje ovisi o vrsti usluge, spremnosti dokumentacije i institucijama. Nakon konzultacije dajemo realan vremenski okvir.
-    - - Mogu li sve riješiti na daljinu?
-      - Mnogi se koraci mogu riješiti online ili putem punomoći. Upozorit ćemo vas kada je osobna prisutnost nužna ili korisna.
-    - - Na kojem jeziku komunicirate?
-      - Komuniciramo na hrvatskom, češkom i engleskom te koordiniramo komunikaciju sa stručnjacima i institucijama.
-    - - Radite li na području cijele Hrvatske?
-      - Da. Zahvaljujući mreži partnera pomažemo klijentima u različitim dijelovima Hrvatske, prema projektu i dostupnosti stručnjaka.
-contact:
-  eyebrow: Kontakt
-  title: Razgovarajmo o vašem planu.
-  lead: Ukratko nam opišite svoju situaciju. Javit ćemo se, razjasniti potrebe i predložiti najbolji sljedeći korak.
-  hours: Ponedjeljak–petak · 9:00–17:00
-  response: U pravilu odgovaramo unutar jednog radnog dana.
-blog:
-  eyebrow: Vodič kroz Hrvatsku
-  title: Praktične informacije za pametne odluke.
-  lead: Razumljivi članci o nekretninama, poslovanju, administraciji i životu u Hrvatskoj.

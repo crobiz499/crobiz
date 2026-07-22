@@ -1,16 +1,16 @@
 ---
-translationKey: insurance
-locale: en
-slug: insurance-croatia
 title: Which insurance do you need in Croatia?
 category: Insurance
-summary: An overview of property, vehicle, health and business insurance.
 cover: /images/ai/insurance-admin.png
-publishedAt: 2026-06-19
-draft: false
-seoTitle: Which insurance do you need in Croatia?
-seoDescription: An overview of property, vehicle, health and business insurance.
 ctaText: CROBIZ helps create a clear plan, introduces trusted partners and coordinates communication throughout the process.
+published: true
+publishedAt: 2026-06-19
+seoDescription: An overview of property, vehicle, health and business insurance.
+seoTitle: Which insurance do you need in Croatia?
+slug: insurance-croatia
+summary: An overview of property, vehicle, health and business insurance.
+translationKey: insurance
+locale: en
 ---
 
 ## A good decision starts with the right information.

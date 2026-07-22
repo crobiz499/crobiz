@@ -16,16 +16,17 @@ export default defineEventHandler(async (event) => {
           || (article.published == null && article.draft === false)
       })
       .reduce((groups, article) => {
-      const articleLocale = String(article.path || article.id).match(/\/(cs|hr|en)\//)?.[1]
+      const articleLocale = String(article.path || article.id).match(/\/(cs|sk|hr|en)\//)?.[1]
       const articleSlug = article.slug || String(article.path || '').split('/').pop()
       groups[article.translationKey] ||= {}
       groups[article.translationKey][articleLocale] = articleSlug
       return groups
       }, {}),
   )
-    .filter((group) => group.cs && group.hr && group.en)
+    .filter((group) => group.cs && group.sk && group.hr && group.en)
     .map((group) => ({
       cs: localize('cs', `blog/${group.cs}`),
+      sk: localize('sk', `blog/${group.sk}`),
       hr: localize('hr', `blog/${group.hr}`),
       en: localize('en', `blog/${group.en}`),
     }))
@@ -33,6 +34,7 @@ export default defineEventHandler(async (event) => {
   const groups = [
     ...pages.map((path) => ({
       cs: localize('cs', path),
+      sk: localize('sk', path),
       hr: localize('hr', path),
       en: localize('en', path),
     })),
@@ -43,6 +45,8 @@ export default defineEventHandler(async (event) => {
     ['x-default', group.cs],
     ['cs', group.cs],
     ['cs-CZ', group.cs],
+    ['sk', group.sk],
+    ['sk-SK', group.sk],
     ['hr', group.hr],
     ['hr-HR', group.hr],
     ['en', group.en],
@@ -53,7 +57,7 @@ export default defineEventHandler(async (event) => {
 
   return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-${groups.flatMap((group) => ['cs', 'hr', 'en'].map((locale) => `  <url>
+${groups.flatMap((group) => ['cs', 'sk', 'hr', 'en'].map((locale) => `  <url>
     <loc>${group[locale]}</loc>
 ${alternates(group)}
   </url>`)).join('\n')}

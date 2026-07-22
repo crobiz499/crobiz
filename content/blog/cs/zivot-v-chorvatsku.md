@@ -3,14 +3,14 @@ title: "Život v Chorvatsku: praktický průvodce"
 category: Život
 cover: /images/ai/croatia-lifestyle.png
 ctaText: CROBIZ vám pomůže vytvořit jasný plán, propojí vás s prověřenými partnery a koordinuje komunikaci po celou dobu.
-summary: Od pobytu a zdravotní péče až po každodenní administrativu.
-draft: false
-locale: cs
+published: true
 publishedAt: 2026-07-03
 seoDescription: Od pobytu a zdravotní péče až po každodenní administrativu.
 seoTitle: "Život v Chorvatsku: praktický průvodce"
 slug: zivot-v-chorvatsku
+summary: Od pobytu a zdravotní péče až po každodenní administrativu.
 translationKey: living-in-croatia
+locale: cs
 ---
 
 ## Dobré rozhodnutí začíná správnými informacemi.

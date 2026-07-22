@@ -2,6 +2,7 @@ const SITE_URL = 'https://www.crobiz.cz'
 
 const localeDetails = {
   cs: { language: 'cs-CZ', ogLocale: 'cs_CZ' },
+  sk: { language: 'sk-SK', ogLocale: 'sk_SK' },
   hr: { language: 'hr-HR', ogLocale: 'hr_HR' },
   en: { language: 'en-GB', ogLocale: 'en_GB' },
 }
@@ -48,9 +49,10 @@ const useSeoBase = (options) => {
       founder: { '@type': 'Person', name: 'Ivana Pisac' },
       areaServed: [
         { '@type': 'Country', name: 'Czechia' },
+        { '@type': 'Country', name: 'Slovakia' },
         { '@type': 'Country', name: 'Croatia' },
       ],
-      knowsLanguage: ['cs', 'hr', 'en'],
+      knowsLanguage: ['cs', 'sk', 'hr', 'en'],
       description: description.value,
     }
     const website = {
@@ -58,7 +60,7 @@ const useSeoBase = (options) => {
       '@id': `${SITE_URL}/#website`,
       url: SITE_URL,
       name: 'CROBIZ',
-      inLanguage: ['cs-CZ', 'hr-HR', 'en-GB'],
+      inLanguage: ['cs-CZ', 'sk-SK', 'hr-HR', 'en-GB'],
       publisher: { '@id': `${SITE_URL}/#organization` },
     }
     const webpage = {
@@ -109,6 +111,7 @@ const useSeoBase = (options) => {
       htmlAttrs: { lang: language.value },
       meta: [
         { property: 'og:locale:alternate', content: 'cs_CZ' },
+        { property: 'og:locale:alternate', content: 'sk_SK' },
         { property: 'og:locale:alternate', content: 'hr_HR' },
         { property: 'og:locale:alternate', content: 'en_GB' },
       ].filter((item) => item.content !== localeDetails[locale.value]?.ogLocale),
