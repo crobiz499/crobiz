@@ -3,7 +3,6 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       gaMeasurementId: process.env.NUXT_PUBLIC_GA_MEASUREMENT_ID || '',
-      formspreeFormId: process.env.NUXT_PUBLIC_FORMSPREE_FORM_ID || '',
     },
   },
   modules: ['@nuxt/content', '@nuxtjs/i18n', '@nuxt/image', 'nuxt-studio'],

@@ -1,6 +1,6 @@
 # CROBIZ website
 
-Multilingual Nuxt website for CROBIZ, with Czech, Croatian, and English content, a Git-backed Nuxt Studio editor, and a Formspree-ready contact form.
+Multilingual Nuxt website for CROBIZ, with Czech, Slovak, Croatian, and English content, a Git-backed Nuxt Studio editor, and a Netlify Forms contact form.
 
 ## Local development
 
@@ -30,13 +30,10 @@ Legal pages remain in `app/pages/privacy.vue` and `app/pages/cookies.vue` so the
 
 Copy `.env.example` to `.env` for local secrets. Production values belong in the hosting provider's environment settings and must never be committed.
 
-- `NUXT_PUBLIC_FORMSPREE_FORM_ID` — the ID from a Formspree form
 - `NUXT_PUBLIC_GA_MEASUREMENT_ID` — optional GA4 measurement ID
 - `STUDIO_GITHUB_CLIENT_ID` — GitHub OAuth app client ID
 - `STUDIO_GITHUB_CLIENT_SECRET` — GitHub OAuth app secret
 - `STUDIO_GITHUB_MODERATORS` — comma-separated whitelist of editor GitHub emails
-
-Without a Formspree ID, the contact form falls back to opening the visitor's email application.
 
 ## Production editor setup
 
@@ -63,14 +60,15 @@ Publishing creates Git commits. A connected host should redeploy the site automa
 
 Do not store the OAuth client secret in this repository. Keep it only in Netlify's environment settings.
 
-## Formspree setup
+## Netlify Forms setup
 
-1. Create the form in Ivana's Formspree account.
-2. Set its recipient address and complete Formspree's email verification.
-3. Copy only the form ID into `NUXT_PUBLIC_FORMSPREE_FORM_ID` on the host.
-4. Redeploy and send one real test enquiry in each language.
+1. In the Netlify project, open **Forms** and enable form detection.
+2. Redeploy the site so Netlify detects the static `crobiz-contact` form definition.
+3. Open **Project configuration → Notifications → Emails and webhooks → Form submission notifications**.
+4. Add an email notification for the `crobiz-contact` form and set the recipient to `ivana.pisac@crobiz.info`.
+5. Submit one realistic test enquiry from the deployed contact page and verify both the Netlify Forms inbox and Ivana's email.
 
-The form includes browser validation, a spam honeypot, localized sending/success/error messages, and does not store enquiries in the CROBIZ application.
+The form uses same-origin HTTPS submission, browser validation, field-length limits, explicit privacy acknowledgement, Netlify's spam filtering and a honeypot. Netlify stores verified submissions in its protected dashboard; export or delete old enquiries regularly according to the privacy retention policy.
 
 ## Client instructions
 

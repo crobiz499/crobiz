@@ -1,160 +1,190 @@
 import { defineCollection, defineContentConfig, property, z } from '@nuxt/content'
 
-const shortText = z.string().min(1)
-const longText = property(z.string().min(1)).editor({ input: 'textarea' })
-const imagePath = property(z.string().min(1)).editor({ input: 'media' })
-const slugText = z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, 'Use lowercase letters, numbers, and hyphens only')
-const publicationDate = z.string().regex(/^\d{4}-\d{2}-\d{2}$/, 'Use the date format YYYY-MM-DD')
+const requiredText = (label: string, description?: string) => property(z.string().min(1)).editor({ label, description })
+const requiredArea = (label: string, description?: string) => property(z.string().min(1)).editor({ input: 'textarea', label, description })
+const imageField = (label: string, description?: string) => property(z.string().min(1)).editor({ input: 'media', label, description })
+const group = <T extends z.ZodTypeAny>(schema: T, label: string, description?: string) => property(schema).editor({ label, description })
+const slugText = z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, 'Koristite samo mala slova, brojeve i crtice')
+const publicationDate = z.string().regex(/^\d{4}-\d{2}-\d{2}$/, 'Datum mora biti u formatu GGGG-MM-DD')
+
 const optionalImagePath = property(z.union([z.string().min(1), z.literal('')]).optional()).editor({
   input: 'media',
-  label: 'Article image',
-  description: 'Required before the article is made public.',
+  label: 'Naslovna fotografija',
+  description: 'Odaberite fotografiju koja će se prikazati na kartici i na vrhu članka.',
 })
 const optionalSlug = property(z.union([slugText, z.literal('')]).optional()).editor({
-  label: 'URL slug',
-  description: 'Required before publishing. Use lowercase letters, numbers, and hyphens only.',
+  label: 'Adresa članka (slug)',
+  description: 'Primjer: kupnja-nekretnine. Koristite samo mala slova, brojeve i crtice.',
 })
 const optionalPublicationDate = property(z.union([publicationDate, z.literal('')]).optional()).editor({
-  label: 'Publication date',
-  description: 'Required before publishing. Use YYYY-MM-DD.',
+  label: 'Datum objave',
+  description: 'Upišite datum u formatu GGGG-MM-DD, primjerice 2026-07-22.',
 })
-const titleAndText = z.tuple([shortText, longText])
-const seoEntry = z.tuple([shortText, longText])
+const titleAndText = z.tuple([
+  requiredText('Naslov'),
+  requiredArea('Opis'),
+])
+const seoEntry = z.tuple([
+  requiredText('SEO naslov', 'Naslov koji se prikazuje u rezultatima pretraživanja.'),
+  requiredArea('SEO opis', 'Kratak opis stranice za Google i druge tražilice.'),
+])
 
 const seoSchema = z.object({
-  home: seoEntry,
-  about: seoEntry,
-  services: seoEntry,
-  how: seoEntry,
-  why: seoEntry,
-  faq: seoEntry,
-  blog: seoEntry,
-  contact: seoEntry,
+  home: group(seoEntry, 'Početna stranica'),
+  about: group(seoEntry, 'O CROBIZ-u'),
+  services: group(seoEntry, 'Usluge'),
+  how: group(seoEntry, 'Kako radimo'),
+  why: group(seoEntry, 'Zašto Hrvatska'),
+  faq: group(seoEntry, 'Česta pitanja'),
+  blog: group(seoEntry, 'Blog'),
+  contact: group(seoEntry, 'Kontakt'),
 })
 
 const homeSchema = z.object({
-  eyebrow: shortText,
-  title: shortText,
-  lead: longText,
-  trust: shortText,
-  categories: z.array(titleAndText),
-  introTitle: shortText,
-  introText: longText,
-  servicesTitle: shortText,
-  whyTitle: shortText,
-  whyText: longText,
-  processTitle: shortText,
-  process: z.array(z.tuple([shortText, shortText, longText])),
+  eyebrow: requiredText('Mali naslov iznad glavnog naslova'),
+  title: requiredText('Glavni naslov'),
+  lead: requiredArea('Uvodni tekst'),
+  trust: requiredText('Poruka povjerenja'),
+  categories: group(z.array(titleAndText), 'Glavne kategorije', 'Kartice koje se prikazuju ispod početnog dijela.'),
+  introTitle: requiredText('Naslov odjeljka O CROBIZ-u'),
+  introText: requiredArea('Tekst odjeljka O CROBIZ-u'),
+  servicesTitle: requiredText('Naslov odjeljka Usluge'),
+  whyTitle: requiredText('Naslov odjeljka Zašto Hrvatska'),
+  whyText: requiredArea('Tekst odjeljka Zašto Hrvatska'),
+  processTitle: requiredText('Naslov odjeljka Kako radimo'),
+  process: group(z.array(z.tuple([
+    requiredText('Broj koraka', 'Primjer: 01'),
+    requiredText('Naslov koraka'),
+    requiredArea('Opis koraka'),
+  ])), 'Koraci suradnje'),
 })
 
 const aboutSchema = z.object({
-  eyebrow: shortText,
-  title: shortText,
-  lead: longText,
-  storyTitle: shortText,
-  story: longText,
-  values: z.array(titleAndText),
-  networkTitle: shortText,
+  eyebrow: requiredText('Mali naslov iznad glavnog naslova'),
+  title: requiredText('Glavni naslov'),
+  lead: requiredArea('Uvodni tekst'),
+  storyTitle: requiredText('Naslov priče'),
+  story: requiredArea('Priča o CROBIZ-u'),
+  values: group(z.array(titleAndText), 'Prednosti i vrijednosti'),
+  networkTitle: requiredText('Naslov odjeljka Partneri'),
 })
 
 const servicesSchema = z.object({
-  eyebrow: shortText,
-  title: shortText,
-  lead: longText,
-  groups: z.array(z.tuple([shortText, z.array(shortText)])),
-  disclaimerTitle: shortText,
-  disclaimer: longText,
-  partners: z.array(shortText),
+  eyebrow: requiredText('Mali naslov iznad glavnog naslova'),
+  title: requiredText('Glavni naslov'),
+  lead: requiredArea('Uvodni tekst'),
+  groups: group(z.array(z.tuple([
+    requiredText('Naziv grupe usluga'),
+    group(z.array(requiredText('Usluga')), 'Popis usluga'),
+  ])), 'Grupe usluga'),
+  disclaimerTitle: requiredText('Naslov važne napomene'),
+  disclaimer: requiredArea('Tekst važne napomene'),
+  partners: group(z.array(requiredText('Naziv partnera ili struke')), 'Mreža partnera'),
 })
 
 const whySchema = z.object({
-  eyebrow: shortText,
-  title: shortText,
-  lead: longText,
-  reasons: z.array(titleAndText),
-  sectorsTitle: shortText,
-  sectors: z.array(shortText),
+  eyebrow: requiredText('Mali naslov iznad glavnog naslova'),
+  title: requiredText('Glavni naslov'),
+  lead: requiredArea('Uvodni tekst'),
+  reasons: group(z.array(titleAndText), 'Razlozi za Hrvatsku'),
+  sectorsTitle: requiredText('Naslov odjeljka Sektori'),
+  sectors: group(z.array(requiredText('Naziv sektora')), 'Sektori'),
 })
 
 const faqSchema = z.object({
-  eyebrow: shortText,
-  title: shortText,
-  lead: longText,
-  items: z.array(titleAndText),
+  eyebrow: requiredText('Mali naslov iznad glavnog naslova'),
+  title: requiredText('Glavni naslov'),
+  lead: requiredArea('Uvodni tekst'),
+  items: group(z.array(z.tuple([
+    requiredText('Pitanje'),
+    requiredArea('Odgovor'),
+  ])), 'Pitanja i odgovori'),
 })
 
 const siteSchema = z.object({
-  locale: z.enum(['cs', 'hr', 'en', 'sk']),
-  seo: seoSchema,
-  home: homeSchema,
-  about: aboutSchema,
-  how: z.object({
-    eyebrow: shortText,
-    title: shortText,
-    lead: longText,
-  }),
-  services: servicesSchema,
-  why: whySchema,
-  faq: faqSchema,
-  contact: z.object({
-    eyebrow: shortText,
-    title: shortText,
-    lead: longText,
-    hours: shortText,
-    response: longText,
-  }),
-  blog: z.object({
-    eyebrow: shortText,
-    title: shortText,
-    lead: longText,
-  }),
+  locale: property(z.enum(['cs', 'hr', 'en', 'sk'])).editor({ hidden: true }),
+  seo: group(seoSchema, 'SEO postavke', 'Naslovi i opisi koji se prikazuju u rezultatima pretraživanja.'),
+  home: group(homeSchema, 'Početna stranica'),
+  about: group(aboutSchema, 'O CROBIZ-u'),
+  how: group(z.object({
+    eyebrow: requiredText('Mali naslov iznad glavnog naslova'),
+    title: requiredText('Glavni naslov'),
+    lead: requiredArea('Uvodni tekst'),
+  }), 'Kako radimo'),
+  services: group(servicesSchema, 'Usluge'),
+  why: group(whySchema, 'Zašto Hrvatska'),
+  faq: group(faqSchema, 'Česta pitanja'),
+  contact: group(z.object({
+    eyebrow: requiredText('Mali naslov iznad glavnog naslova'),
+    title: requiredText('Glavni naslov'),
+    lead: requiredArea('Uvodni tekst'),
+    hours: requiredText('Radno vrijeme'),
+    response: requiredArea('Poruka o vremenu odgovora'),
+  }), 'Kontakt'),
+  blog: group(z.object({
+    eyebrow: requiredText('Mali naslov iznad glavnog naslova'),
+    title: requiredText('Glavni naslov'),
+    lead: requiredArea('Uvodni tekst'),
+  }), 'Blog stranica'),
 })
 
 const blogSchema = z.object({
-  translationKey: property(shortText.optional()).editor({
-    label: 'Translation group',
-    description: 'Use the same value for matching Czech, Slovak, Croatian, and English versions.',
+  translationKey: property(z.string().min(1).optional()).editor({
+    label: 'ID grupe prijevoda',
+    description: 'Za prijevode istog članka upotrijebite potpuno isti ID u sva četiri jezika.',
   }),
   slug: optionalSlug,
-  title: shortText,
-  category: property(shortText.optional()).editor({
-    label: 'Category',
-    description: 'Required before publishing.',
+  title: property(z.string().min(1)).editor({
+    label: 'Naslov članka',
+    description: 'Glavni naslov koji će čitatelji vidjeti.',
   }),
-  summary: property(longText.optional()).editor({
-    label: 'Article summary',
-    description: 'Required before publishing. This appears on the blog card.',
+  category: property(z.string().min(1).optional()).editor({
+    label: 'Kategorija',
+    description: 'Kratka oznaka teme, primjerice Nekretnine ili Poslovanje.',
+  }),
+  summary: property(z.string().min(1).optional()).editor({
+    input: 'textarea',
+    label: 'Kratki sažetak',
+    description: 'Dvije ili tri rečenice koje se prikazuju na kartici članka.',
   }),
   cover: optionalImagePath,
   publishedAt: optionalPublicationDate,
+  seoTitle: property(z.string().min(1).optional()).editor({
+    label: 'SEO naslov',
+    description: 'Može biti jednak naslovu članka. Preporučena duljina je do približno 60 znakova.',
+  }),
+  seoDescription: property(z.string().min(1).optional()).editor({
+    input: 'textarea',
+    label: 'SEO opis',
+    description: 'Kratak opis za tražilice, idealno približno 140–160 znakova.',
+  }),
+  ctaText: property(z.string().min(1).optional()).editor({
+    input: 'textarea',
+    label: 'Završna kontaktna poruka',
+    description: 'Tekst poziva na kontakt koji se prikazuje na kraju članka.',
+  }),
   published: property(z.boolean().optional()).editor({
-    label: 'Published',
-    description: 'Turn this ON after all required fields are complete.',
+    label: 'Objavi članak',
+    description: 'Uključite tek kada su naslov, adresa, kategorija, sažetak, fotografija, datum i sadržaj spremni.',
   }),
   draft: property(z.boolean().optional()).editor({ hidden: true }),
-  seoTitle: property(shortText.optional()).editor({ label: 'SEO title' }),
-  seoDescription: property(longText.optional()).editor({ label: 'SEO description' }),
-  ctaText: property(longText.optional()).editor({
-    label: 'Contact box text',
-    description: 'Text shown at the end of the article.',
-  }),
 })
 
 const settingsSchema = z.object({
-  companyName: shortText,
-  publicEmail: z.string().email(),
-  directEmail: z.string().email(),
-  phone: z.string(),
-  images: z.object({
-    coast: imagePath,
-    meeting: imagePath,
-    property: imagePath,
-    lifestyle: imagePath,
-    tourism: imagePath,
-    insurance: imagePath,
-    partnership: imagePath,
-    portrait: imagePath,
-  }),
+  companyName: requiredText('Naziv tvrtke'),
+  publicEmail: property(z.string().email()).editor({ label: 'Javna e-mail adresa' }),
+  directEmail: property(z.string().email()).editor({ label: 'Izravna e-mail adresa' }),
+  phone: property(z.string()).editor({ label: 'Telefon ili WhatsApp', description: 'Polje može ostati prazno.' }),
+  images: group(z.object({
+    coast: imageField('Hrvatska obala'),
+    meeting: imageField('Poslovni sastanak'),
+    property: imageField('Nekretnine'),
+    lifestyle: imageField('Život u Hrvatskoj'),
+    tourism: imageField('Turistički najam'),
+    insurance: imageField('Osiguranje i administracija'),
+    partnership: imageField('Češko-hrvatsko partnerstvo'),
+    portrait: imageField('Portret Ivane Pisac'),
+  }), 'Fotografije web-stranice', 'Ovdje možete zamijeniti fotografije bez mijenjanja dizajna stranice.'),
 })
 
 export default defineContentConfig({

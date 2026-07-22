@@ -4,36 +4,40 @@ const settings = useSiteSettings()
 const { t, locale } = useI18n()
 const localePath = useLocalePath()
 const images = useSiteImages()
-const config = useRuntimeConfig()
 const form = ref(null)
 const status = ref('idle')
 
 usePageSeo('contact')
 
 const submitForm = async (event) => {
+  if (status.value === 'sending') return
+
   const data = new FormData(event.currentTarget)
-  const subject = `CROBIZ · ${data.get('topic')} · ${data.get('name')}`
-  const formId = config.public.formspreeFormId
+  data.set('form-name', 'crobiz-contact')
+  data.set('subject', 'Novi CROBIZ upit s web-stranice')
+  data.set('language', locale.value)
 
-  data.set('_subject', subject)
-  data.set('locale', locale.value)
-
-  if (!formId) {
-    const body = `${data.get('message')}\n\n${data.get('name')}\n${data.get('email')}\n${data.get('phone') || ''}`
-    window.location.href = `mailto:${settings.value.publicEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
-    return
-  }
+  const encodedData = new URLSearchParams()
+  for (const [key, value] of data.entries()) encodedData.append(key, String(value))
 
   status.value = 'sending'
 
+  if (import.meta.dev) {
+    status.value = 'error'
+    return
+  }
+
   try {
-    const response = await fetch(`https://formspree.io/f/${formId}`, {
+    const response = await fetch('/', {
       method: 'POST',
-      body: data,
-      headers: { Accept: 'application/json' },
+      body: encodedData.toString(),
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
+        Accept: 'application/json',
+      },
     })
 
-    if (!response.ok) throw new Error('Formspree rejected the submission')
+    if (!response.ok) throw new Error('Netlify rejected the submission')
 
     status.value = 'success'
     form.value?.reset()
@@ -60,17 +64,19 @@ const submitForm = async (event) => {
           <p class="section-copy">{{ site.contact.response }}</p>
         </div>
 
-        <form ref="form" class="contact-form" @submit.prevent="submitForm">
-          <div class="form-field"><label for="name">{{ t('form.name') }}</label><input id="name" name="name" autocomplete="name" required></div>
-          <div class="form-field"><label for="email">{{ t('form.email') }}</label><input id="email" name="email" type="email" autocomplete="email" required></div>
-          <div class="form-field"><label for="phone">{{ t('form.phone') }}</label><input id="phone" name="phone" type="tel" autocomplete="tel"></div>
+        <form ref="form" class="contact-form" name="crobiz-contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" @submit.prevent="submitForm">
+          <input type="hidden" name="form-name" value="crobiz-contact">
+          <input type="hidden" name="subject" value="Novi CROBIZ upit s web-stranice" data-remove-prefix>
+          <input type="hidden" name="language" :value="locale">
+          <p class="form-honeypot" aria-hidden="true"><label>Do not fill this field<input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+          <div class="form-field"><label for="name">{{ t('form.name') }}</label><input id="name" name="name" autocomplete="name" maxlength="120" required></div>
+          <div class="form-field"><label for="email">{{ t('form.email') }}</label><input id="email" name="email" type="email" autocomplete="email" maxlength="254" required></div>
+          <div class="form-field"><label for="phone">{{ t('form.phone') }}</label><input id="phone" name="phone" type="tel" autocomplete="tel" maxlength="40"></div>
           <div class="form-field"><label for="topic">{{ t('form.topic') }}</label><select id="topic" name="topic"><option v-for="key in ['general','business','property','admin','tourism']" :key="key">{{ t(`form.topics.${key}`) }}</option></select></div>
-          <div class="form-field form-field--full"><label for="message">{{ t('form.message') }}</label><textarea id="message" name="message" required></textarea></div>
-          <input class="form-honeypot" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
-          <label class="form-consent"><input type="checkbox" required><span>{{ t('form.privacy') }} <NuxtLink :to="localePath('/privacy')">{{ t('footer.privacy') }}</NuxtLink></span></label>
+          <div class="form-field form-field--full"><label for="message">{{ t('form.message') }}</label><textarea id="message" name="message" maxlength="5000" required></textarea></div>
+          <label class="form-consent"><input name="privacyConsent" type="checkbox" value="accepted" required><span>{{ t('form.privacy') }} <NuxtLink :to="localePath('/privacy')">{{ t('footer.privacy') }}</NuxtLink></span></label>
           <p v-if="status !== 'idle'" class="form-status" :class="`form-status--${status}`" role="status" aria-live="polite">{{ t(`form.status.${status}`) }}</p>
           <button class="button button--primary" type="submit" :disabled="status === 'sending'">{{ status === 'sending' ? t('form.status.sending') : t('actions.send') }}</button>
-          <p v-if="!config.public.formspreeFormId" class="form-fallback-note">{{ t('form.fallback') }}</p>
         </form>
       </div>
       <div class="container"><ImagePlaceholder class="map-placeholder" :label="t('common.photoCoast')" :src="images.lifestyle"/></div>

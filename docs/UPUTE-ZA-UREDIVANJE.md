@@ -43,6 +43,14 @@ Za istu temu na tri jezika napravite tri članka. Polje **Translation key** mora
 - Zajedničke fotografije, e-mail adrese i telefon mijenjaju se u **Settings**.
 - Polje za portret Ivane može ostati prazno dok portret nije spreman.
 
+## Kontaktni upiti
+
+- Novi upiti spremaju se u zaštićenom Netlify sučelju pod **Forms → crobiz-contact**.
+- Obavijest o svakom provjerenom upitu šalje se na `ivana.pisac@crobiz.info` nakon što se obavijest uključi u postavkama Netlify projekta.
+- Na poruku odgovorite putem e-mail adrese posjetitelja navedene u upitu.
+- Izvezite samo podatke koji su stvarno potrebni i ne dijelite pristup Netlify računu.
+- Upite starije od roka navedenog u Politici privatnosti redovito izbrišite iz Netlify sučelja i e-pošte.
+
 ## Važna pravila
 
 - Ne mijenjajte `Translation key` na postojećim prevedenim člancima.

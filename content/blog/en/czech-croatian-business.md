@@ -1,16 +1,16 @@
 ---
-translationKey: czech-croatian-business
-locale: en
-slug: czech-croatian-business
 title: Business between Czechia and Croatia
 category: Partnership
-summary: Where opportunities arise and why a local partner matters.
 cover: /images/ai/cross-border-partnership.png
-publishedAt: 2026-06-12
-draft: false
-seoTitle: Business between Czechia and Croatia
-seoDescription: Where opportunities arise and why a local partner matters.
 ctaText: CROBIZ helps create a clear plan, introduces trusted partners and coordinates communication throughout the process.
+published: true
+publishedAt: 2026-06-12
+seoDescription: Where opportunities arise and why a local partner matters.
+seoTitle: Business between Czechia and Croatia
+slug: czech-croatian-business
+summary: Where opportunities arise and why a local partner matters.
+translationKey: czech-croatian-business
+locale: en
 ---
 
 ## A good decision starts with the right information.
