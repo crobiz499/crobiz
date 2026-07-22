@@ -57,7 +57,7 @@ Publishing creates Git commits. A connected host should redeploy the site automa
 
 1. In Ivana's Netlify account, import the `crobiz499/crobiz` GitHub repository.
 2. Keep the detected build command `npm run build` and publish directory `dist`.
-3. Deploy from the `main` branch. The `.nvmrc` file pins builds to Node.js 20.
+3. Deploy from the `main` branch. The `.nvmrc` file pins builds to Node.js 22.
 4. Add the `STUDIO_GITHUB_CLIENT_ID`, `STUDIO_GITHUB_CLIENT_SECRET`, and `STUDIO_GITHUB_MODERATORS` environment variables in Netlify.
 5. Redeploy after saving the variables, then test `https://your-domain/_studio` and publish a small content change.
 
