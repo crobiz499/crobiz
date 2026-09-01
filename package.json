@@ -17,7 +17,7 @@
     "nuxt": "^4.5.0",
     "nuxt-security": "^2.6.0",
     "nuxt-studio": "^1.7.0",
-    "vue": "^3.5.39",
+    "vue": "^3.5.42",
     "vue-router": "^5.1.0"
   },
   "overrides": {
