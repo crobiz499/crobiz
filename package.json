@@ -18,7 +18,7 @@
     "nuxt-security": "^2.6.0",
     "nuxt-studio": "^1.7.0",
     "vue": "^3.5.39",
-    "vue-router": "^5.1.0"
+    "vue-router": "^5.3.1"
   },
   "overrides": {
     "sharp": "0.35.0"
